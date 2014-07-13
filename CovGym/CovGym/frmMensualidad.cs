@@ -14,7 +14,7 @@ namespace CovGym
     {
         Tools tls = new Tools();
         ConexionBD bd = new ConexionBD();
-        public static string id,idMembre,fecIni,fecPago,fecVen,idMensual,cliente,fePago,membresia,costo;
+        public static string id,idMembre,fecIni,fecPago,fecVen,idMensual,cliente,membresia,costo;
         decimal pago = 0;
         public frmMensualidad()
         {
@@ -36,6 +36,7 @@ namespace CovGym
             {
                 try
                 {
+                    dtFecVencimiento.Value = dtFecInicio.Value.AddDays(30);
                     bd.AbrirConexion();
                     bd.SelectMembresia();
                     bd.ResultadoConsulta();
@@ -52,7 +53,7 @@ namespace CovGym
                     MessageBox.Show("Ha ocurrido un error");
                     this.Close();
                 }
-                dtFecVencimiento.Value = dtFecInicio.Value.AddDays(30);
+                
             }
                 //Existente
             else if (frmInicio.mensual == "existe")
@@ -96,14 +97,16 @@ namespace CovGym
                     {
                         idMensual = bd.ResultadoConsulta().GetValue(0).ToString();
                         idMembre = bd.ResultadoConsulta().GetValue(2).ToString();
-                        txtCosto.Text = bd.ResultadoConsulta().GetValue(6).ToString();
+                        costo = bd.ResultadoConsulta().GetValue(6).ToString();
                         fecIni = bd.ResultadoConsulta().GetValue(3).ToString();
                         fecVen = bd.ResultadoConsulta().GetValue(4).ToString();
-                        fecPago = bd.ResultadoConsulta().GetValue(5).ToString();
+                        tls.QuitarHora(bd.ResultadoConsulta().GetValue(5).ToString());
+                        fecPago = tls.fecha;
                     }
                     bd.CerrarConexion();
                     dtFecInicio.Text = fecIni;
                     dtFecVencimiento.Text= fecVen;
+                    
                     bd.AbrirConexion();
                     bd.ObtenerMembresia(idMembre);
                     bd.ResultadoConsulta();
@@ -114,6 +117,16 @@ namespace CovGym
                     }
                     bd.CerrarConexion();
                     cmbMemMen.SelectedIndex = 0;
+                    bd.AbrirConexion();
+                    bd.SelectMembresia(idMembre,"");
+                    bd.ResultadoConsulta();
+                    while (bd.ResultadoConsulta().Read())
+                    {
+                        cmbMemMen.Items.Add(bd.ResultadoConsulta().GetValue(1));
+                    }
+                    bd.CerrarConexion();
+                    txtCosto.Text = costo;
+
                 }
                 catch (Exception ex)
                 {
@@ -185,16 +198,17 @@ namespace CovGym
         {
             try
             {
-                bd.AbrirConexion();
-                bd.SelectMembresia(cmbMemMen.Text);
-                if (bd.ResultadoConsulta().Read())
-                {
-                    idMembre = bd.ResultadoConsulta().GetValue(0).ToString();
-                    pago = Decimal.Parse(bd.ResultadoConsulta().GetValue(2).ToString());
-                }
-                bd.CerrarConexion();
-                txtCosto.Text =Convert.ToString(pago);
 
+                    bd.AbrirConexion();
+                    bd.SelectMembresia(cmbMemMen.Text);
+                    if (bd.ResultadoConsulta().Read())
+                    {
+                        idMembre = bd.ResultadoConsulta().GetValue(0).ToString();
+                        pago = Decimal.Parse(bd.ResultadoConsulta().GetValue(2).ToString());
+                    }
+                    bd.CerrarConexion();
+                    txtCosto.Text = Convert.ToString(pago);
+                    ObtenerMonto();
             }
             catch (Exception ex)
             {
@@ -286,18 +300,23 @@ namespace CovGym
 
         private void dtFecVencimiento_ValueChanged(object sender, EventArgs e)
         {
+
+            ObtenerMonto();
+        }
+
+        private void ObtenerMonto()
+        {
             int cantidad = 0;
             decimal total = 0;
             if (dtFecVencimiento.Value < dtFecInicio.Value)
             {
                 MessageBox.Show("La fecha de vencimiento debe ser mayor a la fecha de inicio");
                 dtFecVencimiento.Value = dtFecInicio.Value.AddDays(30);
-                return;             
+                return;
             }
             cantidad = Math.Abs((dtFecInicio.Value.Month - dtFecVencimiento.Value.Month) + 12 * (dtFecInicio.Value.Year - dtFecVencimiento.Value.Year));
             total = pago * cantidad;
             txtCosto.Text = Convert.ToString(total);
-            
         }
 
         private void btnImprimir_Click(object sender, EventArgs e)
@@ -332,8 +351,9 @@ namespace CovGym
             fecVen = dtFecVencimiento.Text;
             costo = txtCosto.Text;
             frmPago pago = new frmPago();
-            pago.ShowDialog();
             this.Close();
+            pago.ShowDialog();
+            
         }
     }
 }

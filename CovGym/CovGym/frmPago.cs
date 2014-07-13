@@ -13,7 +13,7 @@ namespace CovGym
 {
     public partial class frmPago : Form
     {
-
+        Tools tls = new Tools();
         public frmPago()
         {
             InitializeComponent();
@@ -30,11 +30,18 @@ namespace CovGym
             "</head><body><p class = \"text-right\">" + DateTime.Now.ToLongDateString() + "&nbsp;&nbsp;</p><br><br>" +
             "<p class = \"text-center lead\">COVARRUBIAS GYM</p><br>" +
             "<p class = \"text-center\">COMPROBANTE DE PAGO</p><br><br>");
-            objWriter.WriteLine("<form><fieldset><legend>Comprobante De Pago</legend>");
-            //sLine = "<tr>";
-            sLine = "CLIENTE &nbsp;&nbsp;&nbsp;&nbsp;" + frmMensualidad.cliente + "<br>";
-            sLine += "MEMBRESÍA &nbsp;&nbsp;&nbsp;&nbsp;" + frmMensualidad.membresia + "<br>";
-            //sLine += "</th></tr>";
+            objWriter.WriteLine("<div class=\"table-responsive\"><table class= \"table table-bordered\"><tbody>");
+            //sLine = "<tr><th >CLIENTE: &nbsp;&nbsp;&nbsp;&nbsp;" + frmMensualidad.cliente + "<br>MEMBRESÍA: &nbsp;&nbsp;&nbsp;&nbsp;" + frmMensualidad.membresia + "<br></th></tr>";
+            sLine = "<tr><td><pre>";
+            sLine += "<h4>             <b>CLIENTE:</b>                  " + frmMensualidad.cliente + "</h4><br>";
+            sLine += "<h4>           <b>MEMBRESÍA:</b>                  " + frmMensualidad.membresia + "</h4><br>";
+            sLine += "<h4>       <b>FECHA DE PAGO:</b>                  " + frmMensualidad.fecPago + "</h4><br>";
+            sLine += "<h4>     <b>FECHA DE INICIO:</b>                  " + frmMensualidad.fecIni + "</h4><br>";
+            sLine += "<h4><b>FECHA DE VENCIMIENTO:</b>                  " + frmMensualidad.fecVen + "</h4><br><br>";
+            sLine += "</pre></td></tr><tr><td><pre>";
+            sLine += "<h4><b>               TOTAL:</b>                  $" + frmMensualidad.costo + "</h4><br>";
+            sLine += "<h4><b>     TOTAL CON LETRA:</b>                  " + tls.ConvertFloatToString(float.Parse(frmMensualidad.costo)) + "</h4>";
+            sLine += "</pre></td></tr>";
             //sLine += "<tr>";
             //sLine += "<th>MEMBRESÍA</th><td>" + frmMensualidad.membresia + "</td>";
             //sLine += "</tr>";
@@ -47,10 +54,15 @@ namespace CovGym
             //sLine += "<th>FECHA DE VENCIMIENTO</th><td>" + frmMensualidad.fecVen + "</td>";
             //sLine += "</tr>";
             objWriter.WriteLine(sLine);
-            objWriter.WriteLine("</fieldset></form></body></html>");
+            objWriter.WriteLine("</tbody></table></div></body></html>");
             objWriter.Close();
             Uri dir = new Uri(Directory.GetCurrentDirectory() + "\\comprobantepago.html");
             webBrowser1.Url = dir;
+        }
+
+        private void imprimirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            webBrowser1.ShowPrintDialog();
         }
     }
 }

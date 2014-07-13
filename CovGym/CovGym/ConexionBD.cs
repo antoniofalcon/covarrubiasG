@@ -241,6 +241,13 @@ namespace CovGym
             com.ExecuteNonQuery();
             lectorDatos = com.ExecuteReader();
         }
+        public void SelectMembresia(string idMembresia,string nulo)
+        {
+            com = new MySqlCommand("SELECT * FROM membresias where idMembresia not in(@idMembresia)", cn);
+            com.Parameters.Add("@idMembresia", idMembresia);
+            com.ExecuteNonQuery();
+            lectorDatos = com.ExecuteReader();
+        }
         public void SelectMembresia(string membresia)
         {
             com = new MySqlCommand("SELECT * FROM membresias WHERE membresia = @membresia", cn);
@@ -255,6 +262,7 @@ namespace CovGym
             com.ExecuteNonQuery();
             lectorDatos = com.ExecuteReader();
         }
+
         //
         //  Enter
         //

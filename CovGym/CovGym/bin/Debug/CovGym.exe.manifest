@@ -72,14 +72,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CovGym.exe" size="2348544">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CovGym.exe" size="2355200">
       <assemblyIdentity name="CovGym" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>hS2JGSBDdoxPWeeVJtsZXZhGX4qsAhGFBPqVAEdhwk8=</dsig:DigestValue>
+        <dsig:DigestValue>5N+y67d4zWBlAGDT5jghoB0IeE5by8A59R537H3stjI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -91,7 +91,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>BD343485JnZEUtD6tUN5ZZBPN2XX4b/CWexCBxE80aQ=</dsig:DigestValue>
+        <dsig:DigestValue>KxMGsWRjr+t2jIC++qZAE2eYKAI3om+9aWmOk5pkwIo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

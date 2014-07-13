@@ -662,7 +662,7 @@ namespace CovGym
                 }
                 catch(Exception ex)
                 {
-                    MessageBox.Show("Error al seleccionar fecha "+ex.Message);
+                    //MessageBox.Show("Error al seleccionar fecha "+ex.Message);
                 }
             }
         }
