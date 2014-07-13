@@ -111,5 +111,10 @@ namespace CovGym
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void imprimirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            webBrowser1.ShowPrintDialog();
+        }
     }
 }

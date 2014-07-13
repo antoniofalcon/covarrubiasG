@@ -91,6 +91,11 @@ namespace CovGym
             webBrowser1.ShowPrintPreviewDialog();
         }
 
+        private void imprimirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            webBrowser1.ShowPrintDialog();
+        }
+
 
        
 

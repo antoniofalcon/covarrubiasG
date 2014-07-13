@@ -55,5 +55,10 @@ namespace CovGym
             Uri dir = new Uri(Directory.GetCurrentDirectory() + "\\mensualidadvencida.html");
             webBrowser1.Url = dir;
         }
+
+        private void imprimirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            webBrowser1.ShowPrintDialog();
+        }
     }
 }
