@@ -92,14 +92,13 @@ namespace CovGym
 
         private void frmMembresia_Load(object sender, EventArgs e)
         {
-            frmInicio ini = new frmInicio();
-            BackgroundImage = ini.imageList1.Images[0];
+            BackgroundImage = Image.FromFile(frmInicio.direccion);
             BackgroundImageLayout = ImageLayout.Stretch;
-            btnAceptarMemb.BackgroundImage = ini.imageList2.Images[0];
+            btnAceptarMemb.BackgroundImage = Image.FromFile(frmInicio.bAcep);
             btnAceptarMemb.BackgroundImageLayout = ImageLayout.Stretch;
-            btnCancelCliMemb.BackgroundImage = ini.imageList2.Images[1];
+            btnCancelCliMemb.BackgroundImage = Image.FromFile(frmInicio.bCan);
             btnCancelCliMemb.BackgroundImageLayout = ImageLayout.Stretch;
-            btnLimpiarMemb.BackgroundImage = ini.imageList2.Images[4];
+            btnLimpiarMemb.BackgroundImage = Image.FromFile(frmInicio.bLim);
             btnLimpiarMemb.BackgroundImageLayout = ImageLayout.Stretch;
             if (frmInicio.membres == "existe" )
             {

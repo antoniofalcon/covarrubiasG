@@ -34,14 +34,14 @@ namespace CovGym
                 pbFoto.ImageLocation = @"C:\archivos\user.png";
             }
             */
-            frmInicio ini = new frmInicio();
-            BackgroundImage = ini.imageList1.Images[0];
+            //frmInicio ini = new frmInicio();
+            BackgroundImage = Image.FromFile(frmInicio.direccion);
             BackgroundImageLayout = ImageLayout.Stretch;
-            btnAceptarCli.BackgroundImage = ini.imageList2.Images[0];
+            btnAceptarCli.BackgroundImage = Image.FromFile(frmInicio.bAcep);
             btnAceptarCli.BackgroundImageLayout = ImageLayout.Stretch;
-            btnCancelCli.BackgroundImage = ini.imageList2.Images[1];
+            btnCancelCli.BackgroundImage = Image.FromFile(frmInicio.bCan);
             btnCancelCli.BackgroundImageLayout = ImageLayout.Stretch;
-            btnLimpiar.BackgroundImage = ini.imageList2.Images[4];
+            btnLimpiar.BackgroundImage = Image.FromFile(frmInicio.bLim);
             btnLimpiar.BackgroundImageLayout = ImageLayout.Stretch;
             if (frmInicio.cliente == "nuevo")
             {

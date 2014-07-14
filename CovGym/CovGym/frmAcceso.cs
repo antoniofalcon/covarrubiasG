@@ -61,12 +61,12 @@ namespace CovGym
 
         private void frmAcceso_Load(object sender, EventArgs e)
         {
-            frmInicio ini = new frmInicio();
-            BackgroundImage = ini.imageList1.Images[0];
+            //frmInicio ini = new frmInicio();
+            BackgroundImage = Image.FromFile(frmInicio.direccion);
             BackgroundImageLayout = ImageLayout.Stretch;
-            btnAcceso.BackgroundImage = ini.imageList2.Images[0];
+            btnAcceso.BackgroundImage = Image.FromFile(frmInicio.bAcep);
             btnAcceso.BackgroundImageLayout = ImageLayout.Stretch;
-            btnCancelAcc.BackgroundImage = ini.imageList2.Images[1];
+            btnCancelAcc.BackgroundImage = Image.FromFile(frmInicio.bCan);
             btnCancelAcc.BackgroundImageLayout = ImageLayout.Stretch;
         }
     }

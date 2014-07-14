@@ -108,7 +108,7 @@ namespace CovGym
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Ocurrio un error!!");
             }
         }
 

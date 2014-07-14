@@ -13,8 +13,9 @@ namespace CovGym
     
     public partial class frmInicio : Form
     {
-                public static int nivel=0;
-        public static string busqueda = "";
+        ConexionBD bd = new ConexionBD();
+        public static int nivel=0;
+        public static string busqueda = "", direccion = @"c:\archivos\fondo.png", bAcep = @"c:\archivos\b1.png", bCan = @"c:\archivos\b2.png", bLim = @"c:\archivos\b3.png", bVer = @"c:\archivos\b4.png", bMod = @"c:\archivos\b5.png";
         public static string mensual = "";
         public static string membres = "";
         public static string cliente = "";
@@ -106,7 +107,7 @@ namespace CovGym
 
         private void frmInicio_Load(object sender, EventArgs e)
         {
-            BackgroundImage = imageList1.Images[0];
+            BackgroundImage = Image.FromFile(direccion);
             BackgroundImageLayout = ImageLayout.Stretch;
             frmAcceso acceso = new frmAcceso();
             acceso.ShowDialog();
@@ -122,7 +123,26 @@ namespace CovGym
                 membresiasToolStripMenuItem.Enabled = true;
 
             }
-            month = DateTime.Now.Year * 100 + DateTime.Now.Month;
+            //month = DateTime.Now.Year * 100 + DateTime.Now.Month;
+            try
+            {
+                if (frmInicio.nivel > 0)
+                {
+                    bd.AbrirConexion();
+                    bd.reporteVencido();
+                    bd.ResultadoConsulta();
+                    if (bd.ResultadoConsulta().Read())
+                    {
+                        frmRptVencida ven = new frmRptVencida();
+                        ven.ShowDialog();
+                    }
+                    bd.CerrarConexion();
+                }
+            }
+            catch
+            {
+
+            }
         }
 
         private void nuevoToolStripMenuItem4_Click(object sender, EventArgs e)
@@ -176,8 +196,7 @@ namespace CovGym
         {
             
             frmRptGanancia gan = new frmRptGanancia();
-            gan.MdiParent = this;
-            gan.Show();
+            gan.ShowDialog();
 
 
         }
@@ -192,8 +211,7 @@ namespace CovGym
         private void mensualidadVencidaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmRptVencida ven = new frmRptVencida();
-            ven.MdiParent = this;
-            ven.Show();
+            ven.ShowDialog();
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)

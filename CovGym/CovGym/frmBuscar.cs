@@ -43,14 +43,13 @@ namespace CovGym
 
         private void frmBuscar_Load(object sender, EventArgs e)
         {
-            frmInicio ini = new frmInicio();
-            BackgroundImage = ini.imageList1.Images[0];
+            BackgroundImage = Image.FromFile(frmInicio.direccion);
             BackgroundImageLayout = ImageLayout.Stretch;
-            btnVer.BackgroundImage = ini.imageList2.Images[3];
+            btnVer.BackgroundImage = Image.FromFile(frmInicio.bVer);
             btnVer.BackgroundImageLayout = ImageLayout.Stretch;
-            btnEliminar.BackgroundImage = ini.imageList2.Images[1];
+            btnEliminar.BackgroundImage = Image.FromFile(frmInicio.bCan);
             btnEliminar.BackgroundImageLayout = ImageLayout.Stretch;
-            btnModificar.BackgroundImage = ini.imageList2.Images[2];
+            btnModificar.BackgroundImage = Image.FromFile(frmInicio.bMod);
             btnModificar.BackgroundImageLayout = ImageLayout.Stretch;
 
             txtForma.Focus();

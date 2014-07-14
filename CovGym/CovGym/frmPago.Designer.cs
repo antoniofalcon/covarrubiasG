@@ -74,6 +74,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmPago";
             this.Text = "frmPago";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmPago_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

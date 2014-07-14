@@ -267,12 +267,11 @@ namespace CovGym
         //  Enter
         //
 
-        public void InsertEntrada(string idCliente, string fecEntrada, string horaEntrada)
+        public void InsertEntrada(string idCliente, string fecEntrada)
         {
-            com = new MySqlCommand("INSERT INTO entradas(idCliente,fecEntrada,horaEntrada) values(@idCliente, @fecEntrada,@horaEntrada)", cn);
+            com = new MySqlCommand("INSERT INTO entradas(idCliente,fecEntrada,horaEntrada) values(@idCliente, @fecEntrada,CURTIME())", cn);
             com.Parameters.Add("@idCliente", idCliente);
             com.Parameters.Add("@fecEntrada", fecEntrada);
-            com.Parameters.Add("@horaEntrada", horaEntrada);
             com.ExecuteNonQuery();
         }
         public void SelectValidEnt(string idEntrada)

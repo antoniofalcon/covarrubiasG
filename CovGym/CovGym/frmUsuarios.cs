@@ -123,14 +123,13 @@ namespace CovGym
 
         private void frmUsuarios_Load(object sender, EventArgs e)
         {
-            frmInicio ini = new frmInicio();
-            BackgroundImage = ini.imageList1.Images[0];
+            BackgroundImage = Image.FromFile(frmInicio.direccion);
             BackgroundImageLayout = ImageLayout.Stretch;
-            btnAceptarUser.BackgroundImage = ini.imageList2.Images[0];
+            btnAceptarUser.BackgroundImage = Image.FromFile(frmInicio.bAcep);
             btnAceptarUser.BackgroundImageLayout = ImageLayout.Stretch;
-            btnCancelUser.BackgroundImage = ini.imageList2.Images[1];
+            btnCancelUser.BackgroundImage = Image.FromFile(frmInicio.bCan);
             btnCancelUser.BackgroundImageLayout = ImageLayout.Stretch;
-            btnLimpiar.BackgroundImage = ini.imageList2.Images[4];
+            btnLimpiar.BackgroundImage = Image.FromFile(frmInicio.bLim);
             btnLimpiar.BackgroundImageLayout = ImageLayout.Stretch;
             if (frmInicio.usu == "nuevo")
             {

@@ -52,7 +52,7 @@ namespace CovGym
                 try
                 {
                     bd.AbrirConexion();
-                    bd.InsertEntrada(idCliente, fecha, hora);
+                    bd.InsertEntrada(idCliente, fecha);
                     bd.CerrarConexion();
                     bd.AbrirConexion();
                     bd.UltimoIdEntrada();
@@ -100,12 +100,11 @@ namespace CovGym
 
         private void frmEntradas_Load(object sender, EventArgs e)
         {
-            frmInicio ini = new frmInicio();
-            BackgroundImage = ini.imageList1.Images[0];
+            BackgroundImage = Image.FromFile(frmInicio.direccion);
             BackgroundImageLayout = ImageLayout.Stretch;
-            btnAceptarEn.BackgroundImage = ini.imageList2.Images[0];
+            btnAceptarEn.BackgroundImage = Image.FromFile(frmInicio.bAcep);
             btnAceptarEn.BackgroundImageLayout = ImageLayout.Stretch;
-            btnCancelarEn.BackgroundImage = ini.imageList2.Images[1];
+            btnCancelarEn.BackgroundImage = Image.FromFile(frmInicio.bCan);
             btnCancelarEn.BackgroundImageLayout = ImageLayout.Stretch;
 
         }

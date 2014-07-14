@@ -75,6 +75,7 @@
             this.Name = "frmRptVencida";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Reporte de Vencimiento";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmRptVencida_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

@@ -23,14 +23,13 @@ namespace CovGym
 
         private void frmMensualidad_Load(object sender, EventArgs e)
         {
-            frmInicio ini = new frmInicio();
-            BackgroundImage = ini.imageList1.Images[0];
+            BackgroundImage = Image.FromFile(frmInicio.direccion);
             BackgroundImageLayout = ImageLayout.Stretch;
-            btnAceptarMen.BackgroundImage = ini.imageList2.Images[0];
+            btnAceptarMen.BackgroundImage = Image.FromFile(frmInicio.bAcep);
             btnAceptarMen.BackgroundImageLayout = ImageLayout.Stretch;
-            btnCancelMen.BackgroundImage = ini.imageList2.Images[1];
+            btnCancelMen.BackgroundImage = Image.FromFile(frmInicio.bCan);
             btnCancelMen.BackgroundImageLayout = ImageLayout.Stretch;
-            btnImprimir.BackgroundImage = ini.imageList2.Images[2];
+            btnImprimir.BackgroundImage = Image.FromFile(frmInicio.bMod);
             btnImprimir.BackgroundImageLayout = ImageLayout.Stretch;
             if (frmInicio.mensual == "nuevo")
             {

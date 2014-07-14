@@ -238,14 +238,13 @@ namespace CovGym
 
         private void frmMedicion_Load(object sender, EventArgs e)
         {
-            frmInicio ini = new frmInicio();
-            BackgroundImage = ini.imageList1.Images[0];
+            BackgroundImage = Image.FromFile(frmInicio.direccion);
             BackgroundImageLayout = ImageLayout.Stretch;
-            btnAceptarMe.BackgroundImage = ini.imageList2.Images[0];
+            btnAceptarMe.BackgroundImage = Image.FromFile(frmInicio.bAcep);
             btnAceptarMe.BackgroundImageLayout = ImageLayout.Stretch;
-            btnCancelMe.BackgroundImage = ini.imageList2.Images[1];
+            btnCancelMe.BackgroundImage = Image.FromFile(frmInicio.bCan);
             btnCancelMe.BackgroundImageLayout = ImageLayout.Stretch;
-            btnLimpiarMe.BackgroundImage = ini.imageList2.Images[4];
+            btnLimpiarMe.BackgroundImage = Image.FromFile(frmInicio.bLim);
             btnLimpiarMe.BackgroundImageLayout = ImageLayout.Stretch;
             if (frmInicio.med == "existe" && frmBuscar.verMed == false)
             {

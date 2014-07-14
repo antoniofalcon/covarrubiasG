@@ -140,14 +140,13 @@ namespace CovGym
 
         private void frmRptMedida_Load(object sender, EventArgs e)
         {
-            frmInicio ini = new frmInicio();
-            BackgroundImage = ini.imageList1.Images[0];
+            BackgroundImage = Image.FromFile(frmInicio.direccion);
             BackgroundImageLayout = ImageLayout.Stretch;
-            btnGenerar.BackgroundImage = ini.imageList2.Images[0];
+            btnGenerar.BackgroundImage = Image.FromFile(frmInicio.bAcep);
             btnGenerar.BackgroundImageLayout = ImageLayout.Stretch;
-            btnCancelar.BackgroundImage = ini.imageList2.Images[1];
+            btnCancelar.BackgroundImage = Image.FromFile(frmInicio.bCan);
             btnCancelar.BackgroundImageLayout = ImageLayout.Stretch;
-            btnLimpiar.BackgroundImage = ini.imageList2.Images[4];
+            btnLimpiar.BackgroundImage = Image.FromFile(frmInicio.bLim);
             btnLimpiar.BackgroundImageLayout = ImageLayout.Stretch;
             rbName.Checked = true;
         }
