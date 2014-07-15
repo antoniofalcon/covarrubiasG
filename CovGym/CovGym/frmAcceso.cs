@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.Media;
 
 namespace CovGym
 {
@@ -37,12 +39,19 @@ namespace CovGym
             if (bd.ResultadoConsulta().Read())
             {
                 frmInicio.nivel = Convert.ToInt32(bd.ResultadoConsulta().GetString(0));
+                Stream str = Properties.Resources.entrada;
+                SoundPlayer snd = new SoundPlayer(str);
+                snd.Play();
             }
             else
             {
                 cont++;
                 if (cont < 3)
                 {
+                    Stream str = Properties.Resources.error;
+                    SoundPlayer snd = new SoundPlayer(str);
+                    snd.Play();
+
                     txtUser.Text = "";
                     txtPass.Text = "";
                     txtUser.Focus();

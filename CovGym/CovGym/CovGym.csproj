@@ -318,6 +318,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="1404627146_175399.ico" />
+    <None Include="Resources\valido.wav" />
+    <None Include="Resources\error.wav" />
+    <None Include="Resources\entrada.wav" />
+    <None Include="Resources\camara_5.wav" />
+    <None Include="Resources\botton.wav" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.1">

@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using AForge.Video;
 using AForge.Video.DirectShow;
 using System.IO;
+using System.Media;
 
 namespace CovGym
 {
@@ -61,6 +62,11 @@ namespace CovGym
         {
             ruta = Path.Combine(@"C:\archivos", "foto" + cli.txtClave.Text + ".png");
             EspacioCamara.Image.Save(ruta, System.Drawing.Imaging.ImageFormat.Jpeg);
+           
+            Stream str = Properties.Resources.camara_5;
+            SoundPlayer snd = new SoundPlayer(str);
+            snd.Play();
+            
         }
 
         private void frmFoto_Load(object sender, EventArgs e)

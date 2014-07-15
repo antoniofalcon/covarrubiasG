@@ -63,16 +63,6 @@ namespace CovGym.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _1 {
-            get {
-                object obj = ResourceManager.GetObject("1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap _1402823911_126577 {
             get {
                 object obj = ResourceManager.GetObject("1402823911_126577", resourceCulture);
@@ -91,12 +81,11 @@ namespace CovGym.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
-        internal static System.Drawing.Bitmap _314549__gray_lines_background_p {
+        internal static System.IO.UnmanagedMemoryStream botton {
             get {
-                object obj = ResourceManager.GetObject("314549__gray-lines-background_p", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetStream("botton", resourceCulture);
             }
         }
         
@@ -151,12 +140,30 @@ namespace CovGym.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream camara_5 {
+            get {
+                return ResourceManager.GetStream("camara_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Descargar_Increibles_fondos_abstractos_HD__158_ {
             get {
                 object obj = ResourceManager.GetObject("Descargar Increibles fondos abstractos HD (158)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream entrada {
+            get {
+                return ResourceManager.GetStream("entrada", resourceCulture);
             }
         }
         
@@ -171,12 +178,11 @@ namespace CovGym.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
-        internal static System.Drawing.Bitmap fondos10_net_3d_1288 {
+        internal static System.IO.UnmanagedMemoryStream error {
             get {
-                object obj = ResourceManager.GetObject("fondos10.net-3d-1288", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetStream("error", resourceCulture);
             }
         }
         
@@ -197,6 +203,15 @@ namespace CovGym.Properties {
             get {
                 object obj = ResourceManager.GetObject("male134", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream valido {
+            get {
+                return ResourceManager.GetStream("valido", resourceCulture);
             }
         }
     }
