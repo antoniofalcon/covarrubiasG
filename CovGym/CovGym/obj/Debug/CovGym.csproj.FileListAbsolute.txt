@@ -183,3 +183,4 @@ C:\Users\Antonio\Documents\GitHub\covarrubiasG\CovGym\CovGym\obj\Debug\CovGym.cs
 C:\Users\Antonio\Documents\GitHub\covarrubiasG\CovGym\CovGym\obj\Debug\zh-CHT\CovGym.resources.dll
 C:\Users\Antonio\Documents\GitHub\covarrubiasG\CovGym\CovGym\obj\Debug\CovGym.exe.manifest
 C:\Users\Antonio\Documents\GitHub\covarrubiasG\CovGym\CovGym\obj\Debug\CovGym.application
+C:\Users\Antonio\Documents\GitHub\covarrubiasG\CovGym\CovGym\obj\Debug\CovGym.frmEntradasCli.resources

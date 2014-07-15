@@ -118,18 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="archivoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 25</value>
-  </data>
-  <data name="archivoToolStripMenuItem.Text" xml:space="preserve">
-    <value>Archivo</value>
-  </data>
-  <data name="clientesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>169, 26</value>
-  </data>
-  <data name="clientesToolStripMenuItem.Text" xml:space="preserve">
-    <value>Clientes</value>
-  </data>
   <data name="nuevoToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAIRJREFUSEu1
@@ -160,11 +148,11 @@
   <data name="modificarToolStripMenuItem.Text" xml:space="preserve">
     <value>Buscar</value>
   </data>
-  <data name="mensualidadToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="clientesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>169, 26</value>
   </data>
-  <data name="mensualidadToolStripMenuItem.Text" xml:space="preserve">
-    <value>Mensualidad</value>
+  <data name="clientesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Clientes</value>
   </data>
   <data name="nuevoToolStripMenuItem1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -196,11 +184,11 @@
   <data name="modificarToolStripMenuItem1.Text" xml:space="preserve">
     <value>Buscar</value>
   </data>
-  <data name="medidasToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="mensualidadToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>169, 26</value>
   </data>
-  <data name="medidasToolStripMenuItem.Text" xml:space="preserve">
-    <value>Medidas</value>
+  <data name="mensualidadToolStripMenuItem.Text" xml:space="preserve">
+    <value>Mensualidad</value>
   </data>
   <data name="nuevoToolStripMenuItem3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -232,18 +220,11 @@
   <data name="modificarToolStripMenuItem3.Text" xml:space="preserve">
     <value>Buscar</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="membresiasToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="membresiasToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="medidasToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>169, 26</value>
   </data>
-  <data name="membresiasToolStripMenuItem.Text" xml:space="preserve">
-    <value>Membresías</value>
-  </data>
-  <data name="membresiasToolStripMenuItem.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="medidasToolStripMenuItem.Text" xml:space="preserve">
+    <value>Medidas</value>
   </data>
   <data name="nuevoToolStripMenuItem2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -275,11 +256,18 @@
   <data name="modificarToolStripMenuItem2.Text" xml:space="preserve">
     <value>Buscar</value>
   </data>
-  <data name="entradasToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="membresiasToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="membresiasToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>169, 26</value>
   </data>
-  <data name="entradasToolStripMenuItem.Text" xml:space="preserve">
-    <value>Entradas</value>
+  <data name="membresiasToolStripMenuItem.Text" xml:space="preserve">
+    <value>Membresías</value>
+  </data>
+  <data name="membresiasToolStripMenuItem.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="nuevoToolStripMenuItem4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -290,7 +278,7 @@
 </value>
   </data>
   <data name="nuevoToolStripMenuItem4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 26</value>
+    <value>152, 26</value>
   </data>
   <data name="nuevoToolStripMenuItem4.Text" xml:space="preserve">
     <value>Nuevo</value>
@@ -306,41 +294,19 @@
 </value>
   </data>
   <data name="eliminarToolStripMenuItem4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 26</value>
+    <value>152, 26</value>
   </data>
   <data name="eliminarToolStripMenuItem4.Text" xml:space="preserve">
     <value>Buscar</value>
   </data>
-  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>166, 6</value>
-  </data>
-  <data name="usuariosToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAA3
-        XAAAN1wBy8ekuQAAA6BJREFUSEvtlMtrJFUUxk9VddJ5v9+PzjvpvBPyWCQhJCYYkpBNwiQhEALxDwhC
-        aBD/ABcyIIgrYeLWAXUzCwUHHFFEVKKOutGNMCsFwZ1Jd/X1993uyCzdCl44VNWtc7/vO985Vfb/+o+v
-        MAz91TnnY2RkJNze3o6Ojo7Cg4ODaGlpyVZXV21zc9PW19d97r9abW1t1tXVZd3d3VZTUxMAbENDQ5ZI
-        JPx73gW6BkHwD8HExEQ4NzcXHh4eSkBwfn5uZ2dnPlpbW/05f0Dr4uLCLi8vbXBwcHN3d/fBycnJuyh+
-        aWtrK7G3t2enp6dWWVkpUoHa9PS0zc/P+5icnAxmZ2dNMTU15fGsoaHBmpqawrq6Oquqqro3NjbmFhYW
-        XDqdjlHvRkdHX5fSlZWVkP1wbW1NoC/u7Ow8Oj4+vo/atkwmY/v7+4GqIb8ALBYSo5mZGevo6HgHRpdK
-        pW6am5uzLS0tDtKnyru6urLFxUXr6+vLoDpbJHXk/4I1KVXAfYB6j2sbGxsmv1Aj4Id4LbAY4Hxvb6/r
-        6en5mbRkfX29QfhCf3+/GxgYiNnP1dbW3rLvIPlAfcLfQNX5peahLCJkxQNABZxjPz88POw48B1pkfIA
-        fgPFIstioQPYIUZEtxCm6Y9xX2haeXm5mhKpMWVlZa9KgYBRHpPoIHy0vLwsUE3Ih4D6iqqrq3V1VCX1
-        jvxd5RCRH6ko8tdQV2JFB+QtiTmSHM8vq7HqQWdn58ft7e3a88C6lwDZx7sF2UGEVlFR4QPmiO6qhDKU
-        /4q/SsxTvmPPd4NnAyjT2NjoyImLNsSygncfqXIqNtSblZaWBiQJsOCLWRqiP1UiqmOa4SC5x7MsC5iC
-        BPn3yXFUkZdi3r+P3zXMfUCFfsb9IikB6wYJb8H4+513Ui1gPPxrfHz8PTp/QnqSJq3JCr7SvCxj/80C
-        kgX6yEpKSgJ52kdJn5Gk8hxT4QGl5PlQuXgnot8gvVGumixg7fMxPYPgbUgXmRpmKIqeJJNJhyW3qLil
-        pBxAasZd5CGKsSELabY4MTHexwDmKV125CRGVXI+hvQVyf+Df4UTuFSrMWqYVNzFXTWyRVOiEdRXh0p/
-        1bPGTefw3SHiRsAPUf0Ynx9jySewfgrA55T+BfElyV9D9g0Hrnl3zd41nj8F7EdAfwL8Bz6i7/kovoX0
-        K84+Aec1AT+/9J+sIGqJZqKDSBGYZgPF6C8+M1PWSbQQdUQlUfjPmtnf+jIsslF067EAAAAASUVORK5C
-        YII=
-</value>
-  </data>
-  <data name="usuariosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="entradasToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>169, 26</value>
   </data>
-  <data name="usuariosToolStripMenuItem.Text" xml:space="preserve">
-    <value>Usuarios</value>
+  <data name="entradasToolStripMenuItem.Text" xml:space="preserve">
+    <value>Entradas</value>
+  </data>
+  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>166, 6</value>
   </data>
   <data name="nuevoToolStripMenuItem5.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -403,6 +369,34 @@
   <data name="cerrarSesiónToolStripMenuItem.Text" xml:space="preserve">
     <value>Cerrar Sesión</value>
   </data>
+  <data name="usuariosToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAA3
+        XAAAN1wBy8ekuQAAA6BJREFUSEvtlMtrJFUUxk9VddJ5v9+PzjvpvBPyWCQhJCYYkpBNwiQhEALxDwhC
+        aBD/ABcyIIgrYeLWAXUzCwUHHFFEVKKOutGNMCsFwZ1Jd/X1993uyCzdCl44VNWtc7/vO985Vfb/+o+v
+        MAz91TnnY2RkJNze3o6Ojo7Cg4ODaGlpyVZXV21zc9PW19d97r9abW1t1tXVZd3d3VZTUxMAbENDQ5ZI
+        JPx73gW6BkHwD8HExEQ4NzcXHh4eSkBwfn5uZ2dnPlpbW/05f0Dr4uLCLi8vbXBwcHN3d/fBycnJuyh+
+        aWtrK7G3t2enp6dWWVkpUoHa9PS0zc/P+5icnAxmZ2dNMTU15fGsoaHBmpqawrq6Oquqqro3NjbmFhYW
+        XDqdjlHvRkdHX5fSlZWVkP1wbW1NoC/u7Ow8Oj4+vo/atkwmY/v7+4GqIb8ALBYSo5mZGevo6HgHRpdK
+        pW6am5uzLS0tDtKnyru6urLFxUXr6+vLoDpbJHXk/4I1KVXAfYB6j2sbGxsmv1Aj4Id4LbAY4Hxvb6/r
+        6en5mbRkfX29QfhCf3+/GxgYiNnP1dbW3rLvIPlAfcLfQNX5peahLCJkxQNABZxjPz88POw48B1pkfIA
+        fgPFIstioQPYIUZEtxCm6Y9xX2haeXm5mhKpMWVlZa9KgYBRHpPoIHy0vLwsUE3Ih4D6iqqrq3V1VCX1
+        jvxd5RCRH6ko8tdQV2JFB+QtiTmSHM8vq7HqQWdn58ft7e3a88C6lwDZx7sF2UGEVlFR4QPmiO6qhDKU
+        /4q/SsxTvmPPd4NnAyjT2NjoyImLNsSygncfqXIqNtSblZaWBiQJsOCLWRqiP1UiqmOa4SC5x7MsC5iC
+        BPn3yXFUkZdi3r+P3zXMfUCFfsb9IikB6wYJb8H4+513Ui1gPPxrfHz8PTp/QnqSJq3JCr7SvCxj/80C
+        kgX6yEpKSgJ52kdJn5Gk8hxT4QGl5PlQuXgnot8gvVGumixg7fMxPYPgbUgXmRpmKIqeJJNJhyW3qLil
+        pBxAasZd5CGKsSELabY4MTHexwDmKV125CRGVXI+hvQVyf+Df4UTuFSrMWqYVNzFXTWyRVOiEdRXh0p/
+        1bPGTefw3SHiRsAPUf0Ynx9jySewfgrA55T+BfElyV9D9g0Hrnl3zd41nj8F7EdAfwL8Bz6i7/kovoX0
+        K84+Aec1AT+/9J+sIGqJZqKDSBGYZgPF6C8+M1PWSbQQdUQlUfjPmtnf+jIsslF067EAAAAASUVORK5C
+        YII=
+</value>
+  </data>
+  <data name="usuariosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>169, 26</value>
+  </data>
+  <data name="usuariosToolStripMenuItem.Text" xml:space="preserve">
+    <value>Usuarios</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="salirToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+X</value>
@@ -413,11 +407,11 @@
   <data name="salirToolStripMenuItem.Text" xml:space="preserve">
     <value>Salir</value>
   </data>
-  <data name="reportesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 25</value>
+  <data name="archivoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 25</value>
   </data>
-  <data name="reportesToolStripMenuItem.Text" xml:space="preserve">
-    <value>Reportes</value>
+  <data name="archivoToolStripMenuItem.Text" xml:space="preserve">
+    <value>Archivo</value>
   </data>
   <data name="ganaciaMensualToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -443,11 +437,35 @@
   <data name="mensualidadVencidaToolStripMenuItem.Text" xml:space="preserve">
     <value>Mensualidad Vencida</value>
   </data>
+  <data name="reportesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 25</value>
+  </data>
+  <data name="reportesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Reportes</value>
+  </data>
   <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
   <data name="menuStrip1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="toolStripMenuItem3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>982, 25</value>
+  </data>
+  <data name="toolStripMenuItem3.Text" xml:space="preserve">
+    <value>                                                                                                                                                                                                                                                </value>
+  </data>
+  <data name="tsmFecha.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="tsmFecha.Size" type="System.Drawing.Size, System.Drawing">
+    <value>12, 25</value>
+  </data>
+  <data name="tsmHora.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="tsmHora.Size" type="System.Drawing.Size, System.Drawing">
+    <value>12, 25</value>
   </data>
   <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
@@ -472,24 +490,6 @@
   </data>
   <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="toolStripMenuItem3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>982, 25</value>
-  </data>
-  <data name="toolStripMenuItem3.Text" xml:space="preserve">
-    <value>                                                                                                                                                                                                                                                </value>
-  </data>
-  <data name="tsmFecha.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="tsmFecha.Size" type="System.Drawing.Size, System.Drawing">
-    <value>12, 25</value>
-  </data>
-  <data name="tsmHora.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="tsmHora.Size" type="System.Drawing.Size, System.Drawing">
-    <value>12, 25</value>
   </data>
   <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>132, 17</value>

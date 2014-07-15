@@ -129,7 +129,7 @@ namespace CovGym
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Ha ocurrido un error" + ex.Message);
+                    MessageBox.Show("Ha ocurrido un error");
                     this.Close();
                 }  
             }
@@ -287,7 +287,7 @@ namespace CovGym
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error al intentar Eliminar mensualidad" + ex.Message);
+                    MessageBox.Show("Error al intentar Eliminar mensualidad");
                 }
             }
         }

@@ -84,7 +84,7 @@ namespace CovGym
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("No se pudo Eliminar membresía" + ex.Message);
+                    MessageBox.Show("No se pudo Eliminar membresía");
                 }
             }
 

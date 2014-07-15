@@ -31,32 +31,7 @@ namespace CovGym
 
         private void btnAcceso_Click(object sender, EventArgs e)
         {
-            bd.AbrirConexion();
-            bd.ValidarUsuario(txtUser.Text, txtPass.Text);
-            bd.ResultadoConsulta();
-            if (bd.ResultadoConsulta().Read())
-            {
-                frmInicio.nivel = Convert.ToInt32(bd.ResultadoConsulta().GetString(0));
-            }
-            else
-            {
-                cont++;
-                if (cont < 3)
-                {
-                    txtUser.Text = "";
-                    txtPass.Text = "";
-                    txtUser.Focus();
-                    bd.CerrarConexion();
-                    return;
-                }
-                else
-                {
-                    MessageBox.Show("Cantidad de intentos excedida!");
-                    Application.Exit();
-                }
-            }
-            bd.CerrarConexion();
-            Close();
+            acceso();
         }
 
         private void frmAcceso_Load(object sender, EventArgs e)
@@ -68,6 +43,60 @@ namespace CovGym
             btnAcceso.BackgroundImageLayout = ImageLayout.Stretch;
             btnCancelAcc.BackgroundImage = Image.FromFile(frmInicio.bCan);
             btnCancelAcc.BackgroundImageLayout = ImageLayout.Stretch;
+        }
+
+        private void acceso()
+        {
+            try
+            {
+                bd.AbrirConexion();
+                bd.ValidarUsuario(txtUser.Text, txtPass.Text);
+                bd.ResultadoConsulta();
+                if (bd.ResultadoConsulta().Read())
+                {
+                    frmInicio.nivel = Convert.ToInt32(bd.ResultadoConsulta().GetString(0));
+                }
+                else
+                {
+                    cont++;
+                    if (cont < 3)
+                    {
+                        txtUser.Text = "";
+                        txtPass.Text = "";
+                        txtUser.Focus();
+                        bd.CerrarConexion();
+                        return;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Cantidad de intentos excedida!");
+                        Application.Exit();
+                    }
+                }
+                bd.CerrarConexion();
+                Close();
+            }
+            catch
+            {
+                MessageBox.Show("Ocurrio un error!");
+                Application.Exit();
+            }
+        }
+
+        private void txtPass_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                acceso();
+            }
+        }
+
+        private void txtUser_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                acceso();
+            }
         }
     }
 }

@@ -330,7 +330,7 @@ namespace CovGym
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error al intentar buscar" + ex.Message);
+                    MessageBox.Show("Error al intentar buscar");
                 }
             }
             //
@@ -422,7 +422,7 @@ namespace CovGym
                 catch (Exception ex)
                 {
                     
-                     MessageBox.Show("Error al intentar buscar" + ex);
+                     MessageBox.Show("Error al intentar buscar");
                 }
             }
 

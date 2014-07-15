@@ -92,11 +92,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="bdgimnasioDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>bdgimnasioDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="ConexionBD.cs" />
     <Compile Include="frmBuscar.cs">
       <SubType>Form</SubType>
@@ -109,6 +104,12 @@
     </Compile>
     <Compile Include="frmEntradas.Designer.cs">
       <DependentUpon>frmEntradas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEntradasCli.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEntradasCli.Designer.cs">
+      <DependentUpon>frmEntradasCli.cs</DependentUpon>
     </Compile>
     <Compile Include="frmFoto.cs">
       <SubType>Form</SubType>
@@ -197,6 +198,9 @@
     <EmbeddedResource Include="frmEntradas.resx">
       <DependentUpon>frmEntradas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmEntradasCli.resx">
+      <DependentUpon>frmEntradasCli.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmFoto.resx">
       <DependentUpon>frmFoto.cs</DependentUpon>
     </EmbeddedResource>
@@ -249,17 +253,6 @@
     <EmbeddedResource Include="frmAcceso.resx">
       <DependentUpon>frmAcceso.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="bdgimnasioDataSet.xsc">
-      <DependentUpon>bdgimnasioDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="bdgimnasioDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>bdgimnasioDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="bdgimnasioDataSet.xss">
-      <DependentUpon>bdgimnasioDataSet.xsd</DependentUpon>
-    </None>
     <None Include="CovGym_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -52,7 +52,7 @@ namespace CovGym
                 try
                 {
                     bd.AbrirConexion();
-                    bd.InsertEntrada(idCliente, fecha);
+                    bd.InsertEntrada(idCliente);
                     bd.CerrarConexion();
                     bd.AbrirConexion();
                     bd.UltimoIdEntrada();
@@ -83,7 +83,9 @@ namespace CovGym
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error al intentar ingresar Entrada" + ex.Message);
+                    MessageBox.Show("Error al intentar ingresar Entrada");
+                    txtCodigo.Clear();
+                    txtCodigo.Focus();
                 }
             }
         }

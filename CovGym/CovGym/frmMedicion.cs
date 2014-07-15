@@ -366,7 +366,7 @@ namespace CovGym
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error! Intentelo nuevamente" + ex);
+                    MessageBox.Show("Error! Intentelo nuevamente");
                 }
             }
         }

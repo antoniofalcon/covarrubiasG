@@ -173,7 +173,7 @@ namespace CovGym
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error. Intentelo nuevamente" + ex.Message);
+                    MessageBox.Show("Error. Intentelo nuevamente");
                     frmInicio.busqueda = "usuario";
                     frmBuscar bus = new frmBuscar();
                     bus.Show();

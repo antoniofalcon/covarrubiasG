@@ -107,7 +107,7 @@ namespace CovGym
 
         private void frmInicio_Load(object sender, EventArgs e)
         {
-            BackgroundImage = Image.FromFile(direccion);
+            BackgroundImage = Image.FromFile(@"c:\archivos\fondo2.png");
             BackgroundImageLayout = ImageLayout.Stretch;
             frmAcceso acceso = new frmAcceso();
             acceso.ShowDialog();
@@ -123,20 +123,31 @@ namespace CovGym
                 membresiasToolStripMenuItem.Enabled = true;
 
             }
+            else if (nivel == 3)
+            {
+                menuStrip1.Enabled = false;
+                frmEntradasCli cli = new frmEntradasCli();
+                cli.ShowDialog();
+            }
             //month = DateTime.Now.Year * 100 + DateTime.Now.Month;
             try
             {
-                if (frmInicio.nivel > 0)
+                if (nivel < 3)
                 {
-                    bd.AbrirConexion();
-                    bd.reporteVencido();
-                    bd.ResultadoConsulta();
-                    if (bd.ResultadoConsulta().Read())
+
+
+                    if (frmInicio.nivel > 0)
                     {
-                        frmRptVencida ven = new frmRptVencida();
-                        ven.ShowDialog();
+                        bd.AbrirConexion();
+                        bd.reporteVencido();
+                        bd.ResultadoConsulta();
+                        if (bd.ResultadoConsulta().Read())
+                        {
+                            frmRptVencida ven = new frmRptVencida();
+                            ven.ShowDialog();
+                        }
+                        bd.CerrarConexion();
                     }
-                    bd.CerrarConexion();
                 }
             }
             catch
