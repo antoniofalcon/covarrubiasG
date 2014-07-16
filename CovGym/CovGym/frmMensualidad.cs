@@ -33,6 +33,7 @@ namespace CovGym
             btnImprimir.BackgroundImageLayout = ImageLayout.Stretch;
             if (frmInicio.mensual == "nuevo")
             {
+                btnImprimir.Enabled = false;
                 try
                 {
                     dtFecVencimiento.Value = dtFecInicio.Value.AddDays(30);
@@ -164,7 +165,7 @@ namespace CovGym
                     dtFecInicio.Enabled = true;
                     dtFecVencimiento.Enabled = true;
                     btnAceptarMen.Enabled = true;
-                    btnImprimir.Enabled = true;
+                    //btnImprimir.Enabled = true;
 
                 }
                 catch (Exception ex)
@@ -252,7 +253,9 @@ namespace CovGym
                     bd.AbrirConexion();
                     bd.InsertMensualidad(id, idMembre, fecIni, fecVen, fecPago,txtCosto.Text);
                     bd.CerrarConexion();
-                    MessageBox.Show("Mensualidad registrada correctamente");
+                    MessageBox.Show("Membresáa registrada correctamente");
+                    btnImprimir.Enabled=true;
+                    
                 }
                 catch (Exception ex)
                 {

@@ -353,6 +353,7 @@ namespace CovGym
         {
             frmFoto a = new frmFoto();
             a.Show();
+            
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
@@ -374,6 +375,12 @@ namespace CovGym
         private void txtFoto_TextChanged(object sender, EventArgs e)
         {
             pbFoto.ImageLocation = txtFoto.Text;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            txtFoto.Text = frmFoto.ruta;
+            timer1.Stop();
         }
 
     }

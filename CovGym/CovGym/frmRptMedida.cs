@@ -116,6 +116,7 @@ namespace CovGym
         {
             try
             {
+                cmbFecFin.Items.Clear();
                 cmbFecFin.Enabled = true;               
                 bd.AbrirConexion();
                 fecha = tls.DMYToYMD(cmbFecIni.Text);

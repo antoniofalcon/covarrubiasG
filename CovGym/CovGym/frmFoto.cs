@@ -15,8 +15,8 @@ namespace CovGym
 {
     public partial class frmFoto : Form
     {
-        string ruta;
-        frmClientes cli = new frmClientes();
+        public static string ruta;
+        frmClientes cli;
         private bool ExisteDispositivo = false;
         private FilterInfoCollection DispositivoDeVideo;
         private VideoCaptureDevice FuenteDeVideo = null;
@@ -60,14 +60,15 @@ namespace CovGym
 
         private void btnCaptura_Click(object sender, EventArgs e)
         {
+            cli = new frmClientes();
             ruta = Path.Combine(@"C:\archivos", "foto" + cli.txtClave.Text + ".png");
-            EspacioCamara.Image.Save(ruta, System.Drawing.Imaging.ImageFormat.Png);
+            //EspacioCamara.Image.Save(ruta, System.Drawing.Imaging.ImageFormat.Png);
            
             Stream str = Properties.Resources.camara_5;
             SoundPlayer snd = new SoundPlayer(str);
-            snd.Play();
-            cli.txtFoto.Text = ruta;
+            snd.Play();            
             FuenteDeVideo.Stop();
+            cli.timer1.Start();
             this.Close();
             
         }
