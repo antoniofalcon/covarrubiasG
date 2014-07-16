@@ -303,7 +303,9 @@
             this.Controls.Add(this.lbMensualidad);
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(545, 391);
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(545, 391);
             this.Name = "frmMensualidad";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Mensualidad";

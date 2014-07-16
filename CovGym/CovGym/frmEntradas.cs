@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.Media;
 
 namespace CovGym
 {
@@ -70,10 +72,17 @@ namespace CovGym
                         if (bd.ResultadoConsulta().GetValue(4).ToString() == "V")
                         {
                             pbValid.ImageLocation = @"C:\archivos\valid.png";
+                            Stream str = Properties.Resources.valido;
+                            SoundPlayer snd = new SoundPlayer(str);
+                            snd.Play(); 
+                            
                         }
                         else
                         {
                             pbValid.ImageLocation = @"C:\archivos\invalid.png";
+                            Stream str = Properties.Resources.Errorentrada;
+                            SoundPlayer snd = new SoundPlayer(str);
+                            snd.Play(); 
                         } 
                         timer1.Start();
                     }

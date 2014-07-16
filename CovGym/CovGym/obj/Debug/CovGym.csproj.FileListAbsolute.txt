@@ -183,4 +183,10 @@ C:\Users\Antonio\Documents\GitHub\covarrubiasG\CovGym\CovGym\obj\Debug\CovGym.cs
 C:\Users\Antonio\Documents\GitHub\covarrubiasG\CovGym\CovGym\obj\Debug\zh-CHT\CovGym.resources.dll
 C:\Users\Antonio\Documents\GitHub\covarrubiasG\CovGym\CovGym\obj\Debug\CovGym.exe.manifest
 C:\Users\Antonio\Documents\GitHub\covarrubiasG\CovGym\CovGym\obj\Debug\CovGym.application
+<<<<<<< HEAD
 C:\Users\Antonio\Documents\GitHub\covarrubiasG\CovGym\CovGym\obj\Debug\CovGym.frmEntradasCli.resources
+=======
+C:\Users\Fabian\Documents\GitHub\covarrubiasG\CovGym\CovGym\bin\Debug\CovGym.exe.config
+C:\Users\Fabian\Documents\GitHub\covarrubiasG\CovGym\CovGym\obj\Debug\CovGym.exe
+C:\Users\Fabian\Documents\GitHub\covarrubiasG\CovGym\CovGym\obj\Debug\CovGym.pdb
+>>>>>>> origin/master

@@ -464,7 +464,9 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(630, 609);
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(630, 609);
             this.Name = "frmClientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Clientes";
@@ -505,7 +507,7 @@
         private System.Windows.Forms.TextBox txtFb;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.PictureBox pbFoto;
-        private System.Windows.Forms.TextBox txtFoto;
         public System.Windows.Forms.TextBox txtClave;
+        public System.Windows.Forms.TextBox txtFoto;
     }
 }

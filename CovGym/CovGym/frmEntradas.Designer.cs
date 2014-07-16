@@ -163,7 +163,7 @@
             // 
             // timer1
             // 
-            this.timer1.Interval = 2000;
+            this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // lbEnt
@@ -195,6 +195,8 @@
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.lbForma);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(347, 398);
+            this.MinimumSize = new System.Drawing.Size(347, 398);
             this.Name = "frmEntradas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Entrada";

@@ -48,6 +48,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.groupBox1.Controls.Add(this.EspacioCamara);
             this.groupBox1.Location = new System.Drawing.Point(18, 12);
             this.groupBox1.Name = "groupBox1";
@@ -58,6 +59,7 @@
             // 
             // EspacioCamara
             // 
+            this.EspacioCamara.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.EspacioCamara.Dock = System.Windows.Forms.DockStyle.Fill;
             this.EspacioCamara.Location = new System.Drawing.Point(3, 16);
             this.EspacioCamara.Name = "EspacioCamara";
@@ -68,20 +70,19 @@
             // 
             // btnCaptura
             // 
-            this.btnCaptura.BackgroundImage = global::CovGym.Properties.Resources.btn2;
-            this.btnCaptura.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCaptura.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnCaptura.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnCaptura.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCaptura.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnCaptura.FlatAppearance.BorderSize = 0;
             this.btnCaptura.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnCaptura.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnCaptura.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCaptura.Location = new System.Drawing.Point(134, 224);
+            this.btnCaptura.Image = ((System.Drawing.Image)(resources.GetObject("btnCaptura.Image")));
+            this.btnCaptura.Location = new System.Drawing.Point(189, 227);
             this.btnCaptura.Name = "btnCaptura";
-            this.btnCaptura.Size = new System.Drawing.Size(86, 34);
+            this.btnCaptura.Size = new System.Drawing.Size(44, 28);
             this.btnCaptura.TabIndex = 6;
-            this.btnCaptura.Text = "Captura";
-            this.btnCaptura.UseVisualStyleBackColor = true;
+            this.btnCaptura.UseVisualStyleBackColor = false;
             this.btnCaptura.Click += new System.EventHandler(this.btnCaptura_Click);
             // 
             // frmFoto
@@ -93,6 +94,8 @@
             this.Controls.Add(this.cbxDispositivos);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(278, 303);
+            this.MinimumSize = new System.Drawing.Size(278, 303);
             this.Name = "frmFoto";
             this.Text = "Fotografía";
             this.Load += new System.EventHandler(this.frmFoto_Load);

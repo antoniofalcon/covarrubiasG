@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using AForge.Video;
 using AForge.Video.DirectShow;
 using System.IO;
+using System.Media;
 
 namespace CovGym
 {
@@ -60,11 +61,21 @@ namespace CovGym
         private void btnCaptura_Click(object sender, EventArgs e)
         {
             ruta = Path.Combine(@"C:\archivos", "foto" + cli.txtClave.Text + ".png");
-            EspacioCamara.Image.Save(ruta, System.Drawing.Imaging.ImageFormat.Jpeg);
+            EspacioCamara.Image.Save(ruta, System.Drawing.Imaging.ImageFormat.Png);
+           
+            Stream str = Properties.Resources.camara_5;
+            SoundPlayer snd = new SoundPlayer(str);
+            snd.Play();
+            cli.txtFoto.Text = ruta;
+            FuenteDeVideo.Stop();
+            this.Close();
+            
         }
 
         private void frmFoto_Load(object sender, EventArgs e)
         {
+            BackgroundImage = Image.FromFile(frmInicio.direccion);
+            BackgroundImageLayout = ImageLayout.Stretch;
             FuenteDeVideo = new VideoCaptureDevice(DispositivoDeVideo[cbxDispositivos.SelectedIndex].MonikerString);
             FuenteDeVideo.NewFrame += new NewFrameEventHandler(Video_NuevoFrame);
             FuenteDeVideo.Start();
