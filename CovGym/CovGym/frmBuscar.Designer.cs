@@ -84,6 +84,7 @@
             this.txtForma.Name = "txtForma";
             this.txtForma.Size = new System.Drawing.Size(296, 27);
             this.txtForma.TabIndex = 1;
+            this.txtForma.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtForma_KeyPress);
             // 
             // lbForma
             // 

@@ -414,7 +414,7 @@ namespace CovGym
 
         public void BuscarUsuario(string usuario)
         {
-            com = new MySqlCommand("SELECT usuario,cuenta,nivel FROM usuarios WHERE usuario LIKE @usuario ", cn);
+            com = new MySqlCommand("SELECT usuario,cuenta,nivel FROM usuarios WHERE cuenta LIKE @usuario ", cn);
             com.Parameters.Add("@usuario", usuario);
             com.ExecuteNonQuery(); 
             lectorDatos = com.ExecuteReader();

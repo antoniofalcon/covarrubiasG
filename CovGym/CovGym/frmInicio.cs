@@ -15,7 +15,7 @@ namespace CovGym
     {
         ConexionBD bd = new ConexionBD();
         public static int nivel=0;
-        public static string busqueda = "", direccion = @"c:\archivos\fondo.png", bAcep = @"c:\archivos\b1.png", bCan = @"c:\archivos\b2.png", bLim = @"c:\archivos\b3.png", bVer = @"c:\archivos\b4.png", bMod = @"c:\archivos\b5.png";
+        public static string busqueda = "", direccion = @"c:\archivos\rs\fondo.png", bAcep = @"c:\archivos\rs\b1.png", bCan = @"c:\archivos\rs\b2.png", bLim = @"c:\archivos\rs\b3.png", bVer = @"c:\archivos\rs\b4.png", bMod = @"c:\archivos\rs\b5.png";
         public static string mensual = "";
         public static string membres = "";
         public static string cliente = "";
@@ -107,7 +107,7 @@ namespace CovGym
 
         private void frmInicio_Load(object sender, EventArgs e)
         {
-            BackgroundImage = Image.FromFile(@"c:\archivos\fondo2.png");
+            BackgroundImage = Image.FromFile(@"c:\archivos\rs\fondo2.png");
             BackgroundImageLayout = ImageLayout.Stretch;
             frmAcceso acceso = new frmAcceso();
             acceso.ShowDialog();

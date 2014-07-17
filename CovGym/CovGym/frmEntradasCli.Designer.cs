@@ -43,7 +43,7 @@
             // 
             this.pbValid.BackColor = System.Drawing.Color.Transparent;
             this.pbValid.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbValid.Location = new System.Drawing.Point(71, 110);
+            this.pbValid.Location = new System.Drawing.Point(71, 80);
             this.pbValid.Name = "pbValid";
             this.pbValid.Size = new System.Drawing.Size(154, 128);
             this.pbValid.TabIndex = 34;
@@ -53,10 +53,13 @@
             // 
             this.txtCodigo.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodigo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtCodigo.Location = new System.Drawing.Point(141, 62);
+            this.txtCodigo.Location = new System.Drawing.Point(141, 32);
+            this.txtCodigo.MaxLength = 4;
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(107, 27);
             this.txtCodigo.TabIndex = 33;
+            this.txtCodigo.Tag = "sssdsfdfsdfsdf";
+            this.txtCodigo.TextChanged += new System.EventHandler(this.txtCodigo_TextChanged);
             this.txtCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigo_KeyPress);
             // 
             // lbForma
@@ -65,7 +68,7 @@
             this.lbForma.BackColor = System.Drawing.Color.Transparent;
             this.lbForma.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbForma.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbForma.Location = new System.Drawing.Point(49, 61);
+            this.lbForma.Location = new System.Drawing.Point(49, 31);
             this.lbForma.Name = "lbForma";
             this.lbForma.Size = new System.Drawing.Size(86, 24);
             this.lbForma.TabIndex = 32;
@@ -101,20 +104,19 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(331, 359);
+            this.ClientSize = new System.Drawing.Size(300, 226);
             this.ControlBox = false;
             this.Controls.Add(this.pbValid);
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.lbForma);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(347, 398);
+            this.MaximumSize = new System.Drawing.Size(316, 265);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(347, 398);
+            this.MinimumSize = new System.Drawing.Size(316, 265);
             this.Name = "frmEntradasCli";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Entrada";
+            this.Text = "Registrar Entrada";
             this.Load += new System.EventHandler(this.frmEntradasCli_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbValid)).EndInit();
             this.menuStrip1.ResumeLayout(false);

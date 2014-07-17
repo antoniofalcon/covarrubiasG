@@ -108,7 +108,7 @@ namespace CovGym
                 try
                 {
                     bd.AbrirConexion();
-                    bd.UpdateUsuario(txtNameUser.Text.ToUpper(),txtCuentaUser.Text.ToUpper(),txtPassUser.Text.ToUpper(),nivel,id);
+                    bd.UpdateUsuario(txtNameUser.Text.ToUpper(),txtCuentaUser.Text.ToUpper(),txtPassUser.Text,nivel,id);
                     bd.CerrarConexion();
                     MessageBox.Show("Usuario modificado correctamente");
                     this.Close();

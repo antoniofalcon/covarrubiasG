@@ -144,289 +144,7 @@ namespace CovGym
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-
-            if ((rbName.Checked && !tls.ValidText(txtForma.Text)) || (rbCodigo.Checked && !tls.ValidCode(txtForma.Text)) ||(!rbCodigo.Visible && !tls.ValidText(txtForma.Text)))
-            {
-                MessageBox.Show("Datos inválidos");
-                txtForma.Clear();
-                txtForma.Focus();
-                return;
-            }
-
-            //
-            //ONLY FOR CLIENTS
-            //
-            if (frmInicio.busqueda == "cliente")
-            {
-                try
-                {
-                    if (rbCodigo.Checked == true)
-                    {
-                        lvBuscar.Items.Clear();
-                        bd.AbrirConexion();
-                        bd.BuscarClienteClave(txtForma.Text);
-                        if (bd.ResultadoConsulta().Read())
-                        {
-                            lvBuscar.Items.Add(bd.ResultadoConsulta().GetValue(0).ToString()).SubItems.Add(bd.ResultadoConsulta().GetValue(1).ToString());
-                        }
-                        bd.CerrarConexion();
-                    }
-                    else if (rbName.Checked == true)
-                    {
-                        string dato = "%" + txtForma.Text + "%";
-                        lvBuscar.Items.Clear();
-                        bd.AbrirConexion();
-                        bd.BuscarClienteNombre(dato);
-                        while (bd.ResultadoConsulta().Read())
-                        {
-                            lvBuscar.Items.Add(bd.ResultadoConsulta().GetValue(0).ToString()).SubItems.Add(bd.ResultadoConsulta().GetValue(1).ToString());
-                        }
-                        bd.CerrarConexion();
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error al intentar buscar");
-                }
-            }
-            //
-            //ONLY FOR MEAUSURES
-            //
-            if (frmInicio.busqueda == "medida")
-            {
-                try
-                {
-                    ListViewItem item1;
-                    string fecha;
-                    if (rbCodigo.Checked == true)
-                    {
-                        lvBuscar.Items.Clear();
-                        bd.AbrirConexion();
-                        bd.BuscarFechaMedidaClave(txtForma.Text);
-                        bd.ResultadoConsulta();
-                        while (bd.ResultadoConsulta().Read())
-                        {
-                            item1 = new ListViewItem(bd.ResultadoConsulta().GetValue(0).ToString(), 0);
-                            item1.SubItems.Add(bd.ResultadoConsulta().GetValue(1).ToString());
-                            fecha = bd.ResultadoConsulta().GetValue(2).ToString();
-                            tls.QuitarHora(fecha);
-                            fecha = tls.DMYToYMD(tls.fecha);
-                            item1.SubItems.Add(fecha);
-                            lvBuscar.Items.AddRange(new ListViewItem[] { item1 });
-                        }
-                        bd.CerrarConexion();
-                    }
-                    else if (rbName.Checked == true)
-                    {
-                        string dato = "%" + txtForma.Text + "%";
-                        lvBuscar.Items.Clear();
-                        bd.AbrirConexion();
-                        bd.BuscarFechaMedidaNombre(dato);
-                        bd.ResultadoConsulta();
-                        while (bd.ResultadoConsulta().Read())
-                        {
-                            item1 = new ListViewItem(bd.ResultadoConsulta().GetValue(0).ToString(), 0);
-                            item1.SubItems.Add(bd.ResultadoConsulta().GetValue(1).ToString());
-                            fecha = bd.ResultadoConsulta().GetValue(2).ToString();
-                            tls.QuitarHora(fecha);
-                            fecha = tls.DMYToYMD(tls.fecha);
-                            item1.SubItems.Add(fecha);
-                            lvBuscar.Items.AddRange(new ListViewItem[] { item1 });
-                            //lvBuscar.Items.Add(bd.ResultadoConsulta().GetValue(0).ToString()).SubItems.Add(bd.ResultadoConsulta().GetValue(1).ToString());
-
-                        }
-                        bd.CerrarConexion();
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error al intentar buscar");
-                }
-            }
-            //
-            //ONLY FOR MEMBERSHIPS
-            //
-
-            if (frmInicio.busqueda == "membresia")
-            {
-                try
-                {
-                    ListViewItem item1;
-                    string dato = "%" + txtForma.Text + "%";
-                    lvBuscar.Items.Clear();
-                    bd.AbrirConexion();
-                    bd.buscarMembresia(dato);
-                    while (bd.ResultadoConsulta().Read())
-                    {
-                        item1 = new ListViewItem(bd.ResultadoConsulta().GetValue(1).ToString(), 0);
-                        item1.SubItems.Add(bd.ResultadoConsulta().GetValue(2).ToString());
-                        lvBuscar.Items.AddRange(new ListViewItem[] { item1 });
-                    }
-                    bd.CerrarConexion();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error al intentar buscar");
-                }
-            }
-            //
-            //ONLY FOR ENTER
-            //
-
-            if (frmInicio.busqueda == "entrada")
-            {
-                try
-                {
-                    ListViewItem item1;
-                    string fecha;
-                    if (rbCodigo.Checked == true)
-                    {
-                        lvBuscar.Items.Clear();
-                        bd.AbrirConexion();
-                        bd.BuscarEntradaClave(txtForma.Text);
-                        bd.ResultadoConsulta();
-                        while (bd.ResultadoConsulta().Read())
-                        {
-                            item1 = new ListViewItem(bd.ResultadoConsulta().GetValue(0).ToString(), 0);
-                            item1.SubItems.Add(bd.ResultadoConsulta().GetValue(1).ToString());
-                            fecha = bd.ResultadoConsulta().GetValue(2).ToString();
-                            tls.QuitarHora(fecha);
-                            fecha = tls.DMYToYMD(tls.fecha);
-                            item1.SubItems.Add(fecha);
-                            item1.SubItems.Add(bd.ResultadoConsulta().GetValue(3).ToString());
-                            item1.SubItems.Add(bd.ResultadoConsulta().GetValue(4).ToString());
-                            lvBuscar.Items.AddRange(new ListViewItem[] { item1 });
-                        }
-                        bd.CerrarConexion();
-                    }
-                    else if (rbName.Checked == true)
-                    {
-                        string dato = "%" + txtForma.Text + "%";
-                        lvBuscar.Items.Clear();
-                        bd.AbrirConexion();
-                        bd.BuscarEntradaNombre(dato);
-                        bd.ResultadoConsulta();
-                        while (bd.ResultadoConsulta().Read())
-                        {
-                            item1 = new ListViewItem(bd.ResultadoConsulta().GetValue(0).ToString(), 0);
-                            item1.SubItems.Add(bd.ResultadoConsulta().GetValue(1).ToString());
-                            fecha = bd.ResultadoConsulta().GetValue(2).ToString();
-                            tls.QuitarHora(fecha);
-                            fecha = tls.DMYToYMD(tls.fecha);
-                            item1.SubItems.Add(fecha);
-                            item1.SubItems.Add(bd.ResultadoConsulta().GetValue(3).ToString());
-                            if (bd.ResultadoConsulta().GetValue(4).ToString() == "V")
-                            {
-                                item1.SubItems.Add("Válido");
-                            }
-                            else
-                            {
-                                item1.SubItems.Add("Inválido");
-                            }
-                            lvBuscar.Items.AddRange(new ListViewItem[] { item1 });
-                        }
-                        bd.CerrarConexion();
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error al intentar buscar");
-                }
-            }
-            //
-            //ONLY FOR MONTHLY
-            //
-            if (frmInicio.busqueda == "mensual")
-            {
-                try
-                {
-                    ListViewItem item1;
-                    string fecIni;
-                    string fecVen;
-                    string fecPago;
-                    if (rbCodigo.Checked == true)
-                    {
-                        lvBuscar.Items.Clear();
-                        bd.AbrirConexion();
-                        bd.BuscarMensualidadClave(txtForma.Text,DateTime.Now.Year.ToString());
-                        bd.ResultadoConsulta();
-                        while (bd.ResultadoConsulta().Read())
-                        {
-                            item1 = new ListViewItem(bd.ResultadoConsulta().GetValue(0).ToString(), 0);
-                            item1.SubItems.Add(bd.ResultadoConsulta().GetValue(1).ToString());
-                            fecha = bd.ResultadoConsulta().GetValue(2).ToString();
-                            tls.QuitarHora(fecha);
-                            fecha = tls.DMYToYMD(tls.fecha);
-                            item1.SubItems.Add(fecha);
-                            lvBuscar.Items.AddRange(new ListViewItem[] { item1 });
-                        }
-                        bd.CerrarConexion();
-                    }
-                    else if (rbName.Checked == true)
-                    {
-                        string dato = "%" + txtForma.Text + "%";
-                        lvBuscar.Items.Clear();
-                        bd.AbrirConexion();
-                        bd.BuscarMensualidadNombre(dato, DateTime.Now.Year.ToString());
-                        bd.ResultadoConsulta();
-                        while (bd.ResultadoConsulta().Read())
-                        {
-                            item1 = new ListViewItem(bd.ResultadoConsulta().GetValue(0).ToString(), 0);
-                            item1.SubItems.Add(bd.ResultadoConsulta().GetValue(1).ToString());
-                            fecha = bd.ResultadoConsulta().GetValue(2).ToString();
-                            tls.QuitarHora(fecha);
-                            fecha = tls.DMYToYMD(tls.fecha);
-                            item1.SubItems.Add(fecha);
-                            lvBuscar.Items.AddRange(new ListViewItem[] { item1 });
-                            //lvBuscar.Items.Add(bd.ResultadoConsulta().GetValue(0).ToString()).SubItems.Add(bd.ResultadoConsulta().GetValue(1).ToString());
-
-                        }
-                        bd.CerrarConexion();
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error al intentar buscar");
-                }
-            }
-             //
-            //ONLY FOR USERS
-            //
-            if (frmInicio.busqueda == "usuario")
-            {
-                try
-                {
-                    ListViewItem item1;
-                    string dato = "%" + txtForma.Text + "%";
-                    string niv;
-                    lvBuscar.Items.Clear();
-                    bd.AbrirConexion();
-                    bd.BuscarUsuario(dato);
-                    while (bd.ResultadoConsulta().Read())
-                    {
-                        item1 = new ListViewItem(bd.ResultadoConsulta().GetValue(0).ToString(), 0);
-                        item1.SubItems.Add(bd.ResultadoConsulta().GetValue(1).ToString());
-                        if (bd.ResultadoConsulta().GetValue(2).ToString() == "1")
-                        {
-                            niv = "ADMINISTRADOR";
-                        }
-                        else
-                        {
-                            niv = "NORMAL";
-                        }
-                        item1.SubItems.Add(niv);
-                        lvBuscar.Items.AddRange(new ListViewItem[] { item1 });
-                    }
-                    bd.CerrarConexion();
-                }
-                catch (Exception ex)
-                {
-                    
-                     MessageBox.Show("Error al intentar buscar");
-                }
-            }
-
-            //Finish
+            buscar();
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -666,6 +384,300 @@ namespace CovGym
             }
         }
 
+        private void buscar()
+        {
+
+            if ((rbName.Checked && !tls.ValidText(txtForma.Text)) || (rbCodigo.Checked && !tls.ValidCode(txtForma.Text)) || (!rbCodigo.Visible && !tls.ValidText(txtForma.Text)))
+            {
+                MessageBox.Show("Datos inválidos");
+                txtForma.Clear();
+                txtForma.Focus();
+                return;
+            }
+
+            //
+            //ONLY FOR CLIENTS
+            //
+            if (frmInicio.busqueda == "cliente")
+            {
+                try
+                {
+                    if (rbCodigo.Checked == true)
+                    {
+                        lvBuscar.Items.Clear();
+                        bd.AbrirConexion();
+                        bd.BuscarClienteClave(txtForma.Text);
+                        if (bd.ResultadoConsulta().Read())
+                        {
+                            lvBuscar.Items.Add(bd.ResultadoConsulta().GetValue(0).ToString()).SubItems.Add(bd.ResultadoConsulta().GetValue(1).ToString());
+                        }
+                        bd.CerrarConexion();
+                    }
+                    else if (rbName.Checked == true)
+                    {
+                        string dato = "%" + txtForma.Text + "%";
+                        lvBuscar.Items.Clear();
+                        bd.AbrirConexion();
+                        bd.BuscarClienteNombre(dato);
+                        while (bd.ResultadoConsulta().Read())
+                        {
+                            lvBuscar.Items.Add(bd.ResultadoConsulta().GetValue(0).ToString()).SubItems.Add(bd.ResultadoConsulta().GetValue(1).ToString());
+                        }
+                        bd.CerrarConexion();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al intentar buscar");
+                }
+            }
+            //
+            //ONLY FOR MEASURES
+            //
+            if (frmInicio.busqueda == "medida")
+            {
+                try
+                {
+                    ListViewItem item1;
+                    string fecha;
+                    if (rbCodigo.Checked == true)
+                    {
+                        lvBuscar.Items.Clear();
+                        bd.AbrirConexion();
+                        bd.BuscarFechaMedidaClave(txtForma.Text);
+                        bd.ResultadoConsulta();
+                        while (bd.ResultadoConsulta().Read())
+                        {
+                            item1 = new ListViewItem(bd.ResultadoConsulta().GetValue(0).ToString(), 0);
+                            item1.SubItems.Add(bd.ResultadoConsulta().GetValue(1).ToString());
+                            fecha = bd.ResultadoConsulta().GetValue(2).ToString();
+                            tls.QuitarHora(fecha);
+                            fecha = tls.DMYToYMD(tls.fecha);
+                            item1.SubItems.Add(fecha);
+                            lvBuscar.Items.AddRange(new ListViewItem[] { item1 });
+                        }
+                        bd.CerrarConexion();
+                    }
+                    else if (rbName.Checked == true)
+                    {
+                        string dato = "%" + txtForma.Text + "%";
+                        lvBuscar.Items.Clear();
+                        bd.AbrirConexion();
+                        bd.BuscarFechaMedidaNombre(dato);
+                        bd.ResultadoConsulta();
+                        while (bd.ResultadoConsulta().Read())
+                        {
+                            item1 = new ListViewItem(bd.ResultadoConsulta().GetValue(0).ToString(), 0);
+                            item1.SubItems.Add(bd.ResultadoConsulta().GetValue(1).ToString());
+                            fecha = bd.ResultadoConsulta().GetValue(2).ToString();
+                            tls.QuitarHora(fecha);
+                            fecha = tls.DMYToYMD(tls.fecha);
+                            item1.SubItems.Add(fecha);
+                            lvBuscar.Items.AddRange(new ListViewItem[] { item1 });
+                            //lvBuscar.Items.Add(bd.ResultadoConsulta().GetValue(0).ToString()).SubItems.Add(bd.ResultadoConsulta().GetValue(1).ToString());
+
+                        }
+                        bd.CerrarConexion();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al intentar buscar");
+                }
+            }
+            //
+            //ONLY FOR MEMBERSHIPS
+            //
+
+            if (frmInicio.busqueda == "membresia")
+            {
+                try
+                {
+                    ListViewItem item1;
+                    string dato = "%" + txtForma.Text + "%";
+                    lvBuscar.Items.Clear();
+                    bd.AbrirConexion();
+                    bd.buscarMembresia(dato);
+                    while (bd.ResultadoConsulta().Read())
+                    {
+                        item1 = new ListViewItem(bd.ResultadoConsulta().GetValue(1).ToString(), 0);
+                        item1.SubItems.Add(bd.ResultadoConsulta().GetValue(2).ToString());
+                        lvBuscar.Items.AddRange(new ListViewItem[] { item1 });
+                    }
+                    bd.CerrarConexion();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al intentar buscar");
+                }
+            }
+            //
+            //ONLY FOR ENTER
+            //
+
+            if (frmInicio.busqueda == "entrada")
+            {
+                try
+                {
+                    ListViewItem item1;
+                    string fecha;
+                    if (rbCodigo.Checked == true)
+                    {
+                        lvBuscar.Items.Clear();
+                        bd.AbrirConexion();
+                        bd.BuscarEntradaClave(txtForma.Text);
+                        bd.ResultadoConsulta();
+                        while (bd.ResultadoConsulta().Read())
+                        {
+                            item1 = new ListViewItem(bd.ResultadoConsulta().GetValue(0).ToString(), 0);
+                            item1.SubItems.Add(bd.ResultadoConsulta().GetValue(1).ToString());
+                            fecha = bd.ResultadoConsulta().GetValue(2).ToString();
+                            tls.QuitarHora(fecha);
+                            fecha = tls.DMYToYMD(tls.fecha);
+                            item1.SubItems.Add(fecha);
+                            item1.SubItems.Add(bd.ResultadoConsulta().GetValue(3).ToString());
+                            item1.SubItems.Add(bd.ResultadoConsulta().GetValue(4).ToString());
+                            lvBuscar.Items.AddRange(new ListViewItem[] { item1 });
+                        }
+                        bd.CerrarConexion();
+                    }
+                    else if (rbName.Checked == true)
+                    {
+                        string dato = "%" + txtForma.Text + "%";
+                        lvBuscar.Items.Clear();
+                        bd.AbrirConexion();
+                        bd.BuscarEntradaNombre(dato);
+                        bd.ResultadoConsulta();
+                        while (bd.ResultadoConsulta().Read())
+                        {
+                            item1 = new ListViewItem(bd.ResultadoConsulta().GetValue(0).ToString(), 0);
+                            item1.SubItems.Add(bd.ResultadoConsulta().GetValue(1).ToString());
+                            fecha = bd.ResultadoConsulta().GetValue(2).ToString();
+                            tls.QuitarHora(fecha);
+                            fecha = tls.DMYToYMD(tls.fecha);
+                            item1.SubItems.Add(fecha);
+                            item1.SubItems.Add(bd.ResultadoConsulta().GetValue(3).ToString());
+                            if (bd.ResultadoConsulta().GetValue(4).ToString() == "V")
+                            {
+                                item1.SubItems.Add("Válido");
+                            }
+                            else
+                            {
+                                item1.SubItems.Add("Inválido");
+                            }
+                            lvBuscar.Items.AddRange(new ListViewItem[] { item1 });
+                        }
+                        bd.CerrarConexion();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al intentar buscar");
+                }
+            }
+            //
+            //ONLY FOR MONTHLY
+            //
+            if (frmInicio.busqueda == "mensual")
+            {
+                try
+                {
+                    ListViewItem item1;
+                    string fecIni;
+                    string fecVen;
+                    string fecPago;
+                    if (rbCodigo.Checked == true)
+                    {
+                        lvBuscar.Items.Clear();
+                        bd.AbrirConexion();
+                        bd.BuscarMensualidadClave(txtForma.Text, DateTime.Now.Year.ToString());
+                        bd.ResultadoConsulta();
+                        while (bd.ResultadoConsulta().Read())
+                        {
+                            item1 = new ListViewItem(bd.ResultadoConsulta().GetValue(0).ToString(), 0);
+                            item1.SubItems.Add(bd.ResultadoConsulta().GetValue(1).ToString());
+                            fecha = bd.ResultadoConsulta().GetValue(2).ToString();
+                            tls.QuitarHora(fecha);
+                            fecha = tls.DMYToYMD(tls.fecha);
+                            item1.SubItems.Add(fecha);
+                            lvBuscar.Items.AddRange(new ListViewItem[] { item1 });
+                        }
+                        bd.CerrarConexion();
+                    }
+                    else if (rbName.Checked == true)
+                    {
+                        string dato = "%" + txtForma.Text + "%";
+                        lvBuscar.Items.Clear();
+                        bd.AbrirConexion();
+                        bd.BuscarMensualidadNombre(dato, DateTime.Now.Year.ToString());
+                        bd.ResultadoConsulta();
+                        while (bd.ResultadoConsulta().Read())
+                        {
+                            item1 = new ListViewItem(bd.ResultadoConsulta().GetValue(0).ToString(), 0);
+                            item1.SubItems.Add(bd.ResultadoConsulta().GetValue(1).ToString());
+                            fecha = bd.ResultadoConsulta().GetValue(2).ToString();
+                            tls.QuitarHora(fecha);
+                            fecha = tls.DMYToYMD(tls.fecha);
+                            item1.SubItems.Add(fecha);
+                            lvBuscar.Items.AddRange(new ListViewItem[] { item1 });
+                            //lvBuscar.Items.Add(bd.ResultadoConsulta().GetValue(0).ToString()).SubItems.Add(bd.ResultadoConsulta().GetValue(1).ToString());
+
+                        }
+                        bd.CerrarConexion();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al intentar buscar");
+                }
+            }
+            //
+            //ONLY FOR USERS
+            //
+            if (frmInicio.busqueda == "usuario")
+            {
+                try
+                {
+                    ListViewItem item1;
+                    string dato = "%" + txtForma.Text + "%";
+                    string niv;
+                    lvBuscar.Items.Clear();
+                    bd.AbrirConexion();
+                    bd.BuscarUsuario(dato);
+                    while (bd.ResultadoConsulta().Read())
+                    {
+                        item1 = new ListViewItem(bd.ResultadoConsulta().GetValue(0).ToString(), 0);
+                        item1.SubItems.Add(bd.ResultadoConsulta().GetValue(1).ToString());
+                        if (bd.ResultadoConsulta().GetValue(2).ToString() == "1")
+                        {
+                            niv = "ADMINISTRADOR";
+                        }
+                        else
+                        {
+                            niv = "NORMAL";
+                        }
+                        item1.SubItems.Add(niv);
+                        lvBuscar.Items.AddRange(new ListViewItem[] { item1 });
+                    }
+                    bd.CerrarConexion();
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show("Error al intentar buscar");
+                }
+            }
+
+            //Finish
+        }
+
+        private void txtForma_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                buscar();
+            }
+        }
        
     }
 }

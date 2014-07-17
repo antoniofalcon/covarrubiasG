@@ -34,75 +34,7 @@ namespace CovGym
         {
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
             {
-                if (!tls.ValidCode(txtCodigo.Text))
-                {
-                    Stream str = Properties.Resources.Errorentrada;
-                    SoundPlayer snd = new SoundPlayer(str);
-                    snd.Play(); 
-                    MessageBox.Show("Código no Válido");
-                    txtCodigo.Clear();
-                    txtCodigo.Focus();
-                    return;
-                }
-               
-                    try
-                    {
-                        bd.AbrirConexion();
-                        bd.BuscarClienteClave(txtCodigo.Text);
-                        bd.ResultadoConsulta();
-                        if (bd.ResultadoConsulta().Read())
-                        {
-                            idCliente = bd.ResultadoConsulta().GetValue(0).ToString();
-                        }
-                        bd.CerrarConexion();
-
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Codigo de cliente Incorrecto");
-                    }
-                    try
-                    {
-                        bd.AbrirConexion();
-                        bd.InsertEntrada(idCliente);
-                        bd.CerrarConexion();
-                        bd.AbrirConexion();
-                        bd.UltimoIdEntrada();
-                        bd.ResultadoConsulta();
-                        if (bd.ResultadoConsulta().Read())
-                        {
-                            idEntrada = bd.ResultadoConsulta().GetValue(0).ToString();
-                        }
-                        bd.CerrarConexion();
-                        bd.AbrirConexion();
-                        bd.SelectValidEnt(idEntrada);
-                        bd.ResultadoConsulta();
-                        if (bd.ResultadoConsulta().Read())
-                        {
-                            if (bd.ResultadoConsulta().GetValue(4).ToString() == "V")
-                            {
-                                pbValid.ImageLocation = @"C:\archivos\valid.png";
-                                Stream str = Properties.Resources.valido;
-                                SoundPlayer snd = new SoundPlayer(str);
-                                snd.Play(); 
-                            }
-                            else
-                            {
-                                pbValid.ImageLocation = @"C:\archivos\invalid.png";
-                                Stream str = Properties.Resources.Errorentrada;
-                                SoundPlayer snd = new SoundPlayer(str);
-                                snd.Play(); 
-                            }
-                            timer1.Start();
-                        }
-                        bd.CerrarConexion();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error al intentar ingresar Entrada");
-                        txtCodigo.Clear();
-                        txtCodigo.Focus();
-                    }
+                entrada();
             }
         }
 
@@ -118,6 +50,86 @@ namespace CovGym
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void txtCodigo_TextChanged(object sender, EventArgs e)
+        {
+            if (txtCodigo.Text.Length==4)
+            {
+                entrada();
+            }
+        }
+        private void entrada()
+        {
+            if (!tls.ValidCode(txtCodigo.Text))
+            {
+                Stream str = Properties.Resources.Errorentrada;
+                SoundPlayer snd = new SoundPlayer(str);
+                snd.Play();
+                MessageBox.Show("Código no Válido");
+                txtCodigo.Clear();
+                txtCodigo.Focus();
+                return;
+            }
+
+            try
+            {
+                bd.AbrirConexion();
+                bd.BuscarClienteClave(txtCodigo.Text);
+                bd.ResultadoConsulta();
+                if (bd.ResultadoConsulta().Read())
+                {
+                    idCliente = bd.ResultadoConsulta().GetValue(0).ToString();
+                }
+                bd.CerrarConexion();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Codigo de cliente Incorrecto");
+            }
+            try
+            {
+                bd.AbrirConexion();
+                bd.InsertEntrada(idCliente);
+                bd.CerrarConexion();
+                bd.AbrirConexion();
+                bd.UltimoIdEntrada();
+                bd.ResultadoConsulta();
+                if (bd.ResultadoConsulta().Read())
+                {
+                    idEntrada = bd.ResultadoConsulta().GetValue(0).ToString();
+                }
+                bd.CerrarConexion();
+                bd.AbrirConexion();
+                bd.SelectValidEnt(idEntrada);
+                bd.ResultadoConsulta();
+                if (bd.ResultadoConsulta().Read())
+                {
+                    if (bd.ResultadoConsulta().GetValue(4).ToString() == "V")
+                    {
+                        pbValid.ImageLocation = @"C:\archivos\rs\valid.png";
+                        Stream str = Properties.Resources.valido;
+                        SoundPlayer snd = new SoundPlayer(str);
+                        snd.Play();
+                    }
+                    else
+                    {
+                        pbValid.ImageLocation = @"C:\archivos\rs\invalid.png";
+                        Stream str = Properties.Resources.Errorentrada;
+                        SoundPlayer snd = new SoundPlayer(str);
+                        snd.Play();
+                    }
+                    timer1.Start();
+                }
+                bd.CerrarConexion();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al intentar ingresar Entrada");
+                txtCodigo.Clear();
+                txtCodigo.Focus();
+            }
         }
     }
 }

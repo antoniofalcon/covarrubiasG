@@ -17,6 +17,7 @@ namespace CovGym
         frmInicio inicio = new frmInicio();
         int clave;
         string claveTem;
+        public static string rt,rt2;
         public frmClientes()
         {
             InitializeComponent();
@@ -45,7 +46,7 @@ namespace CovGym
             btnLimpiar.BackgroundImageLayout = ImageLayout.Stretch;
             if (frmInicio.cliente == "nuevo")
             {
-                pbFoto.ImageLocation = @"C:\archivos\user.png";
+                pbFoto.ImageLocation = @"C:\archivos\fotografias\user.png";
                 bd.AbrirConexion();
                 bd.ObtenerIdCliente();
                 if (bd.ResultadoConsulta().Read())
@@ -250,7 +251,7 @@ namespace CovGym
                     txtName.Clear();
                     txtNum.Clear();
                     txtTel.Clear();
-                    pbFoto.ImageLocation = @"C:\archivos\user.png";                    
+                    pbFoto.ImageLocation = @"C:\archivos\fotografias\user.png";                    
                 }
                 catch (Exception ex)
                 {
@@ -311,33 +312,7 @@ namespace CovGym
                         txtClave.Text = clave.ToString("0000");
                     }
                     bd.CerrarConexion();
-                    /*txtCalle.Clear();
-                    txtCel.Clear();
-                    txtCol.Clear();
-                    txtCp.Clear();
-                    txtEmail.Clear();
-                    txtFb.Clear();
-                    txtFoto.Clear();
-                    txtName.Clear();
-                    txtNum.Clear();
-                    txtTel.Clear();
-                    pbFoto.ImageLocation = @"C:\archivos\user.png";
-                    btnAceptarCli.Text = "Aceptar";
-                    txtName.Enabled = true;
-                    txtCalle.Enabled = true;
-                    txtNum.Enabled = true;
-                    txtCol.Enabled = true;
-                    txtCp.Enabled = true;
-                    txtTel.Enabled = true;
-                    txtCel.Enabled = true;
-                    dtFec.Enabled = true;
-                    txtEmail.Enabled = true;
-                    txtFb.Enabled = true;
-                    txtFoto.Enabled = true;
-                    btnLimpiar.Enabled = true;
-                    btnFoto.Enabled = true;
-                    btnAceptarCli.Enabled = true;
-                    frmInicio.cliente = "nuevo";*/
+                
                     this.Close();
 
                 }
@@ -351,8 +326,10 @@ namespace CovGym
         
         private void btnFoto_Click(object sender, EventArgs e)
         {
+            rt = txtClave.Text;
             frmFoto a = new frmFoto();
-            a.Show();
+            a.ShowDialog();
+            txtFoto.Text = a.ruta;
             
         }
 
@@ -369,7 +346,7 @@ namespace CovGym
             txtName.Clear();
             txtNum.Clear();
             txtTel.Clear();
-            pbFoto.ImageLocation = @"C:\archivos\user.png";
+            pbFoto.ImageLocation = @"C:\archivos\fotografias\user.png";
         }
 
         private void txtFoto_TextChanged(object sender, EventArgs e)
@@ -379,7 +356,8 @@ namespace CovGym
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            txtFoto.Text = frmFoto.ruta;
+            
+            txtFoto.Text = rt2;
             timer1.Stop();
         }
 
