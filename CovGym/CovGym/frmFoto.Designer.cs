@@ -40,7 +40,7 @@
             // cbxDispositivos
             // 
             this.cbxDispositivos.FormattingEnabled = true;
-            this.cbxDispositivos.Location = new System.Drawing.Point(21, 227);
+            this.cbxDispositivos.Location = new System.Drawing.Point(18, 277);
             this.cbxDispositivos.Name = "cbxDispositivos";
             this.cbxDispositivos.Size = new System.Drawing.Size(25, 21);
             this.cbxDispositivos.TabIndex = 5;
@@ -52,7 +52,7 @@
             this.groupBox1.Controls.Add(this.EspacioCamara);
             this.groupBox1.Location = new System.Drawing.Point(18, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(215, 209);
+            this.groupBox1.Size = new System.Drawing.Size(326, 259);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "WebCams";
@@ -63,7 +63,7 @@
             this.EspacioCamara.Dock = System.Windows.Forms.DockStyle.Fill;
             this.EspacioCamara.Location = new System.Drawing.Point(3, 16);
             this.EspacioCamara.Name = "EspacioCamara";
-            this.EspacioCamara.Size = new System.Drawing.Size(209, 190);
+            this.EspacioCamara.Size = new System.Drawing.Size(320, 240);
             this.EspacioCamara.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.EspacioCamara.TabIndex = 0;
             this.EspacioCamara.TabStop = false;
@@ -78,28 +78,29 @@
             this.btnCaptura.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnCaptura.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnCaptura.Image = ((System.Drawing.Image)(resources.GetObject("btnCaptura.Image")));
-            this.btnCaptura.Location = new System.Drawing.Point(189, 227);
+            this.btnCaptura.Location = new System.Drawing.Point(18, 277);
             this.btnCaptura.Name = "btnCaptura";
-            this.btnCaptura.Size = new System.Drawing.Size(44, 28);
+            this.btnCaptura.Size = new System.Drawing.Size(326, 37);
             this.btnCaptura.TabIndex = 6;
             this.btnCaptura.UseVisualStyleBackColor = false;
-            this.btnCaptura.Click += new System.EventHandler(this.btnCaptura_Click);
+            this.btnCaptura.Click += new System.EventHandler(this.btnCaptura_Click_1);
             // 
             // frmFoto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(262, 264);
+            this.ClientSize = new System.Drawing.Size(364, 324);
             this.Controls.Add(this.btnCaptura);
             this.Controls.Add(this.cbxDispositivos);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(278, 303);
+            this.MaximumSize = new System.Drawing.Size(380, 363);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(278, 303);
+            this.MinimumSize = new System.Drawing.Size(380, 363);
             this.Name = "frmFoto";
-            this.Text = "Fotografía";
+            this.Text = "Tomar Fotografía";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmFoto_FormClosing);
             this.Load += new System.EventHandler(this.frmFoto_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.EspacioCamara)).EndInit();

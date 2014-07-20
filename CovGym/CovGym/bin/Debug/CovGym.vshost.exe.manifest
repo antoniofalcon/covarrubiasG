@@ -79,7 +79,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>JDLY00Ih+GOMgZsvd/5+WKYeaC9VNlxGd9pvY8iQUag=</dsig:DigestValue>
+        <dsig:DigestValue>nI+11wQuKXmzK+9wr9pkGqfZmB/htc6d9OUiVTRsgIM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -91,19 +91,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>F2rvw+xPCZ1XJOwm/3tD3JR2EJdDfJnAjI0LeiEYMyQ=</dsig:DigestValue>
-      </hash>
-    </dependentAssembly>
-  </dependency>
-  <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WebCam_Capture.dll" size="118784">
-      <assemblyIdentity name="WebCam_Capture" version="1.0.2395.24959" language="neutral" />
-      <hash>
-        <dsig:Transforms>
-          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-        </dsig:Transforms>
-        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>GK0X3ZDP9/LmO4cmQ7f93kGOFRX3M4AlZMPMAGbbc9Q=</dsig:DigestValue>
+        <dsig:DigestValue>sbk+vsKcJD/15wlJUjHlwqkjw9x513eFtaamu6XWbs0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

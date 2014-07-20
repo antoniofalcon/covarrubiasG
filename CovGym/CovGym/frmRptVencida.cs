@@ -28,7 +28,7 @@ namespace CovGym
                 bd.AbrirConexion();
                 bd.reporteVencido();
                 bd.ResultadoConsulta();
-                StreamWriter objWriter = new StreamWriter("mensualidadvencida.html");
+                StreamWriter objWriter = new StreamWriter(@"c:\archivos\reportes\mensualidadvencida.html");
                 string sLine = "";
                 objWriter.WriteLine("<!DOCTYPE html><html><head> <meta charset=\"utf-8\"/>" +
                 "<script type=\"text/javascript\" src=\"js/jquery-1.11.1.min.js\"></script>" +
@@ -54,7 +54,7 @@ namespace CovGym
                 bd.CerrarConexion();
                 objWriter.WriteLine("</tbody></table></div></body></html>");
                 objWriter.Close();
-                Uri dir = new Uri(Directory.GetCurrentDirectory() + "\\mensualidadvencida.html");
+                Uri dir = new Uri(@"c:\archivos\reportes\mensualidadvencida.html");
                 webBrowser1.Url = dir;
             }
             catch(Exception ex)

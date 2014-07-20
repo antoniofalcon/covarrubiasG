@@ -17,7 +17,7 @@ namespace CovGym
         frmInicio inicio = new frmInicio();
         int clave;
         string claveTem;
-        public static string rt,rt2;
+        public static string rt;
         public frmClientes()
         {
             InitializeComponent();
@@ -276,17 +276,6 @@ namespace CovGym
                         txtClave.Text = clave.ToString("0000");
                     }
                     bd.CerrarConexion();
-                   /* txtCalle.Clear();
-                    txtCel.Clear();
-                    txtCol.Clear();
-                    txtCp.Clear();
-                    txtEmail.Clear();
-                    txtFb.Clear();
-                    txtFoto.Clear();
-                    txtName.Clear();
-                    txtNum.Clear();
-                    txtTel.Clear();
-                    pbFoto.ImageLocation = @"C:\archivos\user.png";*/
                     this.Close();
                 }
                 catch (Exception ex)
@@ -330,6 +319,8 @@ namespace CovGym
             frmFoto a = new frmFoto();
             a.ShowDialog();
             txtFoto.Text = a.ruta;
+            pbFoto.ImageLocation = a.ruta;
+
             
         }
 
@@ -351,14 +342,15 @@ namespace CovGym
 
         private void txtFoto_TextChanged(object sender, EventArgs e)
         {
+            if (txtFoto.TextLength<1)
+            {
+                pbFoto.ImageLocation = @"C:\archivos\fotografias\user.png";
+            }
             pbFoto.ImageLocation = txtFoto.Text;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            
-            txtFoto.Text = rt2;
-            timer1.Stop();
         }
 
     }

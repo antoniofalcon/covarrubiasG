@@ -2,8 +2,6 @@ C:\Users\Antonio\Documents\GitHub\covarrubiasG\CovGym\CovGym\bin\Debug\CovGym.ex
 C:\Users\Antonio\Documents\GitHub\covarrubiasG\CovGym\CovGym\bin\Debug\CovGym.exe.manifest
 C:\Users\Antonio\Documents\GitHub\covarrubiasG\CovGym\CovGym\bin\Debug\CovGym.application
 C:\Users\Antonio\Documents\GitHub\covarrubiasG\CovGym\CovGym\bin\Debug\CovGym.exe
-C:\Users\Antonio\Documents\GitHub\covarrubiasG\CovGym\CovGym\bin\Debug\CovGym.pdb
-C:\Users\Antonio\Documents\GitHub\covarrubiasG\CovGym\CovGym\bin\Debug\zh-CHT\CovGym.resources.dll
 C:\Users\Antonio\Documents\GitHub\covarrubiasG\CovGym\CovGym\bin\Debug\AForge.Video.DirectShow.dll
 C:\Users\Antonio\Documents\GitHub\covarrubiasG\CovGym\CovGym\bin\Debug\AForge.Video.dll
 C:\Users\Antonio\Documents\GitHub\covarrubiasG\CovGym\CovGym\obj\Debug\CovGym.frmBuscar.resources
@@ -30,4 +28,8 @@ C:\Users\Antonio\Documents\GitHub\covarrubiasG\CovGym\CovGym\obj\Debug\CovGym.ex
 C:\Users\Antonio\Documents\GitHub\covarrubiasG\CovGym\CovGym\obj\Debug\CovGym.application
 C:\Users\Antonio\Documents\GitHub\covarrubiasG\CovGym\CovGym\obj\Debug\CovGym.exe
 C:\Users\Antonio\Documents\GitHub\covarrubiasG\CovGym\CovGym\obj\Debug\CovGym.pdb
-C:\Users\Antonio\Documents\GitHub\covarrubiasG\CovGym\CovGym\obj\Debug\CovGym.csprojResolveAssemblyReference.cache
+C:\Users\Antonio\Documents\GitHub\covarrubiasG\CovGym\CovGym\bin\Debug\CovGym.pdb
+C:\Users\Antonio\Documents\GitHub\covarrubiasG\CovGym\CovGym\bin\Debug\zh-CHT\CovGym.resources.dll
+C:\Users\Antonio\Documents\GitHub\covarrubiasG\CovGym\CovGym\bin\Debug\hy\CovGym.resources.dll
+C:\Users\Antonio\Documents\GitHub\covarrubiasG\CovGym\CovGym\obj\Debug\CovGym.frmClientes.hy.resources
+C:\Users\Antonio\Documents\GitHub\covarrubiasG\CovGym\CovGym\obj\Debug\hy\CovGym.resources.dll

@@ -198,8 +198,8 @@
             this.MaximumSize = new System.Drawing.Size(347, 398);
             this.MinimumSize = new System.Drawing.Size(347, 398);
             this.Name = "frmEntradas";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Entrada";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Registrar Entrada";
             this.Load += new System.EventHandler(this.frmEntradas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbValid)).EndInit();
             this.ResumeLayout(false);

@@ -449,8 +449,8 @@
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(569, 563);
             this.Name = "frmMedicion";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Medidas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.Text = "Medidas de Cliente";
             this.Load += new System.EventHandler(this.frmMedicion_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

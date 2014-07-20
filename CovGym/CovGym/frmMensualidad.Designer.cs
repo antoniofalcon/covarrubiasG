@@ -307,7 +307,7 @@
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(545, 391);
             this.Name = "frmMensualidad";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Mensualidad";
             this.Load += new System.EventHandler(this.frmMensualidad_Load);
             this.ResumeLayout(false);

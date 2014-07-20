@@ -176,7 +176,7 @@
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(421, 297);
             this.Name = "frmMembresia";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Membresías";
             this.Load += new System.EventHandler(this.frmMembresia_Load);
             this.ResumeLayout(false);

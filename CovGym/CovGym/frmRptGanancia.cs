@@ -59,7 +59,7 @@ namespace CovGym
                 bd.AbrirConexion();
                 bd.reporteGanancia();
                 bd.ResultadoConsulta();
-                StreamWriter objWriter = new StreamWriter("mensualidadganancia.html");
+                StreamWriter objWriter = new StreamWriter(@"c:\archivos\reportes\mensualidadganancia.html");
                 string sLine = "";
                 objWriter.WriteLine("<!DOCTYPE html><html><head> <meta charset=\"utf-8\"/>" +
                 "<script type=\"text/javascript\" src=\"js/jquery-1.11.1.min.js\"></script>" +
@@ -83,7 +83,7 @@ namespace CovGym
                 bd.CerrarConexion();
                 objWriter.WriteLine("<tr><th colspan = 2 class = \"text-right\">" + total + "</th></tr></tbody></table></div></body></html>");
                 objWriter.Close();
-                Uri dir = new Uri(Directory.GetCurrentDirectory() + "\\mensualidadganancia.html");
+                Uri dir = new Uri(@"c:\archivos\reportes\mensualidadganancia.html");
                 webBrowser1.Url = dir;
             }
             catch (Exception ex)
@@ -102,10 +102,6 @@ namespace CovGym
         {
             webBrowser1.ShowPrintDialog();
         }
-
-
-       
-
         
     }
 }

@@ -54,10 +54,11 @@
             this.cmbFecFin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cmbFecFin.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbFecFin.FormattingEnabled = true;
-            this.cmbFecFin.Location = new System.Drawing.Point(192, 239);
+            this.cmbFecFin.Location = new System.Drawing.Point(192, 203);
             this.cmbFecFin.Name = "cmbFecFin";
             this.cmbFecFin.Size = new System.Drawing.Size(263, 28);
             this.cmbFecFin.TabIndex = 5;
+            this.cmbFecFin.SelectedIndexChanged += new System.EventHandler(this.cmbFecFin_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -65,7 +66,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(59, 238);
+            this.label2.Location = new System.Drawing.Point(59, 202);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(127, 24);
             this.label2.TabIndex = 50;
@@ -79,11 +80,10 @@
             this.cmbFecIni.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbFecIni.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbFecIni.FormattingEnabled = true;
-            this.cmbFecIni.Location = new System.Drawing.Point(192, 204);
+            this.cmbFecIni.Location = new System.Drawing.Point(192, 237);
             this.cmbFecIni.Name = "cmbFecIni";
             this.cmbFecIni.Size = new System.Drawing.Size(263, 28);
             this.cmbFecIni.TabIndex = 4;
-            this.cmbFecIni.SelectedIndexChanged += new System.EventHandler(this.cmbFecIni_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -91,7 +91,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(51, 204);
+            this.label3.Location = new System.Drawing.Point(51, 237);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(135, 24);
             this.label3.TabIndex = 48;
@@ -300,7 +300,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmRptMedida";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = " ";
+            this.Text = "Selección de Cliente";
             this.Load += new System.EventHandler(this.frmRptMedida_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

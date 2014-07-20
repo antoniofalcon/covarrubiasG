@@ -68,6 +68,10 @@
   <PropertyGroup>
     <SignManifests>true</SignManifests>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="AForge.Video">
       <HintPath>..\..\..\..\html5\WebCams\WebCams\bin\Debug\AForge.Video.dll</HintPath>
@@ -87,9 +91,6 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="WebCam_Capture">
-      <HintPath>..\..\tomarfoto\tomarfoto\bin\Debug\WebCam_Capture.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConexionBD.cs" />
@@ -194,6 +195,9 @@
     <Compile Include="Tools.cs" />
     <EmbeddedResource Include="frmBuscar.resx">
       <DependentUpon>frmBuscar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmClientes.hy.resx">
+      <DependentUpon>frmClientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEntradas.resx">
       <DependentUpon>frmEntradas.cs</DependentUpon>

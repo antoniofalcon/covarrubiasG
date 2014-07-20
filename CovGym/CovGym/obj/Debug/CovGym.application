@@ -14,14 +14,14 @@
     <framework targetVersion="4.5.1" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="CovGym.exe.manifest" size="6890">
+    <dependentAssembly dependencyType="install" codebase="CovGym.exe.manifest" size="6914">
       <assemblyIdentity name="CovGym.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>NyDAPEje+JhFPU2AWjWumVjnkx0rDrRwH6LoM6j40Eg=</dsig:DigestValue>
+        <dsig:DigestValue>uItSRF2DefXLMP3I7rAKl7nmVcwbbBuw+qljIDPgnPY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

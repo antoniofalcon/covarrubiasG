@@ -85,7 +85,7 @@ namespace CovGym
             
             try
             {
-                cmbFecIni.Enabled = true;
+                cmbFecFin.Enabled = true;
                 bd.AbrirConexion();
                 bd.ObtenerIdClienteMedida(cmbCliente.Text);
                 bd.ResultadoConsulta();
@@ -100,42 +100,15 @@ namespace CovGym
                 while (bd.ResultadoConsulta().Read())
                 {
                      tls.QuitarHora(bd.ResultadoConsulta().GetValue(0).ToString());
-                     fecha = tls.fecha;
-                    cmbFecIni.Items.Add(fecha);
-                }
-                bd.CerrarConexion();
-                cmbFecIni.SelectedIndex = 0;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("error al seleccionar cliente");
-            }
-        }
-
-        private void cmbFecIni_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                cmbFecFin.Items.Clear();
-                cmbFecFin.Enabled = true;               
-                bd.AbrirConexion();
-                fecha = tls.DMYToYMD(cmbFecIni.Text);
-                bd.ObtenerFechaMedida(idCliente,fecha);
-                bd.ResultadoConsulta();
-                while (bd.ResultadoConsulta().Read())
-                {
-                    tls.QuitarHora(bd.ResultadoConsulta().GetValue(0).ToString());
-                    fechaFi = tls.fecha;
+                     fechaFi = tls.fecha;
                     cmbFecFin.Items.Add(fechaFi);
-
                 }
-
                 bd.CerrarConexion();
                 cmbFecFin.SelectedIndex = 0;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("error al seleccionar fecha de inicio");
+                MessageBox.Show("error al seleccionar cliente");
             }
         }
 
@@ -154,9 +127,10 @@ namespace CovGym
 
         private void btnGenerar_Click(object sender, EventArgs e)
         {
-            frmInicio ini = new frmInicio();
             fecha = cmbFecIni.Text;
             fechaFi = cmbFecFin.Text;
+            frmInicio ini = new frmInicio();
+           
             frmRptMedidaGen med = new frmRptMedidaGen();        
             //med.MdiParent = ini;
             med.Show();
@@ -173,6 +147,35 @@ namespace CovGym
         {
             txtForma.Clear();
             txtForma.Focus();
+        }
+
+        private void cmbFecFin_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                cmbFecIni.Items.Clear();
+                cmbFecIni.Enabled = true;
+                bd.AbrirConexion();
+                fecha = tls.DMYToYMD(cmbFecFin.Text);
+                bd.ObtenerFechaMedida(idCliente, fecha);
+                bd.ResultadoConsulta();
+                while (bd.ResultadoConsulta().Read())
+                {
+                    tls.QuitarHora(bd.ResultadoConsulta().GetValue(0).ToString());
+                    fecha = tls.fecha;
+                    cmbFecIni.Items.Add(fecha);
+
+                }
+
+                bd.CerrarConexion();
+                cmbFecIni.SelectedIndex = 0;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("error al seleccionar fecha Final");
+                cmbFecFin.SelectedIndex = 0;
+                return;
+            }
         }
     }
 }

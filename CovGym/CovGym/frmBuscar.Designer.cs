@@ -251,7 +251,7 @@
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(563, 477);
             this.Name = "frmBuscar";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Buscar";
             this.Load += new System.EventHandler(this.frmBuscar_Load);
             this.ResumeLayout(false);

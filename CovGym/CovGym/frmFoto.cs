@@ -16,7 +16,6 @@ namespace CovGym
     public partial class frmFoto : Form
     {
         public string ruta="";
-        frmClientes cli;
         private bool ExisteDispositivo = false;
         private FilterInfoCollection DispositivoDeVideo;
         private VideoCaptureDevice FuenteDeVideo = null;
@@ -58,27 +57,30 @@ namespace CovGym
 
         }
 
-        private void btnCaptura_Click(object sender, EventArgs e)
-        {
-            ruta = Path.Combine(@"C:\archivos\fotografias", "foto" + frmClientes.rt + ".png");
-            //EspacioCamara.Image.Save(ruta, System.Drawing.Imaging.ImageFormat.Png);        
-            Stream str = Properties.Resources.camara_5;
-            SoundPlayer snd = new SoundPlayer(str);
-            snd.Play();            
-            FuenteDeVideo.Stop();
-            this.Close();
-            
-        }
-
         private void frmFoto_Load(object sender, EventArgs e)
         {
-            cli = new frmClientes();
             BackgroundImage = Image.FromFile(frmInicio.direccion);
             BackgroundImageLayout = ImageLayout.Stretch;
             FuenteDeVideo = new VideoCaptureDevice(DispositivoDeVideo[cbxDispositivos.SelectedIndex].MonikerString);
             FuenteDeVideo.NewFrame += new NewFrameEventHandler(Video_NuevoFrame);
             FuenteDeVideo.Start();
             groupBox1.Text = DispositivoDeVideo[cbxDispositivos.SelectedIndex].Name.ToString();
+        }
+
+        private void frmFoto_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            FuenteDeVideo.Stop();
+        }
+
+        private void btnCaptura_Click_1(object sender, EventArgs e)
+        {
+            ruta = Path.Combine(@"C:\archivos\fotografias", "foto" + frmClientes.rt + ".png");
+            EspacioCamara.Image.Save(ruta, System.Drawing.Imaging.ImageFormat.Png);
+            Stream str = Properties.Resources.camara_5;
+            SoundPlayer snd = new SoundPlayer(str);
+            snd.Play();
+            FuenteDeVideo.Stop();
+            this.Close();
         }
     }
 }

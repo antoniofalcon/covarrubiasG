@@ -72,14 +72,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CovGym.exe" size="2771968">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CovGym.exe" size="2812416">
       <assemblyIdentity name="CovGym" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>JDLY00Ih+GOMgZsvd/5+WKYeaC9VNlxGd9pvY8iQUag=</dsig:DigestValue>
+        <dsig:DigestValue>cfsKKElBG/KWNVVkZ5x/00nYfk7FzoH+ijTtx5aEx38=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="hy\CovGym.resources.dll" size="110592">
+      <assemblyIdentity name="CovGym.resources" version="1.0.0.0" language="hy" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>nvqDvCgtrpUuOEGuxYYGvI/sDtmiiZ4wgdRAnHiqCzg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -91,19 +103,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>F2rvw+xPCZ1XJOwm/3tD3JR2EJdDfJnAjI0LeiEYMyQ=</dsig:DigestValue>
-      </hash>
-    </dependentAssembly>
-  </dependency>
-  <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WebCam_Capture.dll" size="118784">
-      <assemblyIdentity name="WebCam_Capture" version="1.0.2395.24959" language="neutral" />
-      <hash>
-        <dsig:Transforms>
-          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-        </dsig:Transforms>
-        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>GK0X3ZDP9/LmO4cmQ7f93kGOFRX3M4AlZMPMAGbbc9Q=</dsig:DigestValue>
+        <dsig:DigestValue>+6Ph1XRyHy4EzCASRhDSMeFlLEJY3HTVFqe8HX0KYlQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

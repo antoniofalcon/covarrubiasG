@@ -74,7 +74,7 @@ namespace CovGym
         }
         public void BuscarClienteId(string id)
         {
-            com = new MySqlCommand("SELECT cliente from clientes where idCliente = @idCliente", cn);
+            com = new MySqlCommand("SELECT cliente, (YEAR(CURDATE())-YEAR(fecNac)) - (RIGHT(CURDATE(),5)<RIGHT(fecNac,5)) AS age from clientes where idCliente = @idCliente", cn);
             com.Parameters.Add("@idCliente", id);
             com.ExecuteNonQuery();
             lectorDatos = com.ExecuteReader();
@@ -153,16 +153,16 @@ namespace CovGym
 
         public void ObtenerFechaMedida(string idCliente)
         {
-            com = new MySqlCommand("SELECT fecha FROM medidas WHERE idCliente = @idCliente ORDER BY fecha", cn);
+            com = new MySqlCommand("SELECT fecha FROM medidas WHERE idCliente = @idCliente ORDER BY fecha DESC limit 12", cn);
             com.Parameters.Add("@idCliente", idCliente);
             com.ExecuteNonQuery();
             lectorDatos = com.ExecuteReader();
         }
-        public void ObtenerFechaMedida(string idCliente,string fechaIn)
+        public void ObtenerFechaMedida(string idCliente,string fechaFi)
         {
-            com = new MySqlCommand("SELECT fecha FROM medidas WHERE idCliente = @idCliente AND fecha > @fecha ORDER BY fecha", cn);
+            com = new MySqlCommand("SELECT fecha FROM medidas WHERE idCliente = @idCliente AND fecha < @fecha ORDER BY fecha DESC limit 12", cn);
             com.Parameters.Add("@idCliente", idCliente);
-            com.Parameters.Add("@fecha", fechaIn);
+            com.Parameters.Add("@fecha", fechaFi);
             com.ExecuteNonQuery();
             lectorDatos = com.ExecuteReader();
         }
